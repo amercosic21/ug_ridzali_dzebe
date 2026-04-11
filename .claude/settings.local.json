@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(netstat -ano)",
+      "Bash(taskkill //PID 12700 //F)",
+      "Bash(npm run build)",
+      "Bash(npm run dev)",
+      "Bash(curl -L -o C:/laragon/www/ridzali-dzebe/public/logo.jpg \"https://scontent.fsjj1-1.fna.fbcdn.net/v/t39.30808-1/481072874_122178791078197182_3715653741498498498_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=108&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=placeholder&_nc_zt=24&_nc_ht=scontent.fsjj1-1.fna&_nc_gid=placeholder&oh=placeholder&oe=placeholder\")",
+      "Bash(npx next build)",
+      "Bash(xargs sed -i 's/max-w-\\\\[1200px\\\\]/max-w-[1560px]/g; s/max-w-\\\\[1300px\\\\]/max-w-[1560px]/g')",
+      "WebSearch",
+      "Bash(tasklist)",
+      "Bash(sed -i 's/py-24 bg-cream text-gray-900/py-16 bg-cream text-gray-900/' src/components/Contact.tsx)",
+      "Bash(sed -i 's/py-24 bg-cream relative/py-16 bg-cream relative/' src/components/About.tsx)",
+      "Bash(sed -i 's/py-24 bg-charcoal/py-16 bg-charcoal/' src/components/Tournament.tsx)",
+      "Bash(sed -i 's/py-24 bg-memorial/py-16 bg-memorial/' src/components/Memorial.tsx)",
+      "Bash(sed -i 's/py-20 relative overflow-hidden text-green-50/py-16 relative overflow-hidden text-green-50/' src/components/Quote.tsx)",
+      "Bash(sed -i 's/py-20 bg-primary-dark/py-16 bg-primary-dark/' src/components/Countdown.tsx)",
+      "Bash(sed -i 's/py-20 bg-amber/py-16 bg-amber/' src/components/GalleryTeaser.tsx)",
+      "Bash(sed -i 's/py-20 bg-sage/py-16 bg-sage/' src/components/QuoteCountdown.tsx)",
+      "Bash(sed -i 's/py-24 bg-white relative/py-16 bg-white relative/' src/components/Gallery.tsx)",
+      "Bash(mkdir -p /c/laragon/www/ridzali-dzebe/src/app/[lang]/galerija/[godina])",
+      "Bash(mkdir -p /c/laragon/www/ridzali-dzebe/src/app/[lang]/politika-privatnosti)",
+      "Bash(ls -lhS *.jpg)",
+      "Bash(node -e \"const g = require\\('./src/data/gallery.ts'\\); console.log\\('err'\\)\")",
+      "Bash(node -e ':*)",
+      "Bash(python3 -c ':*)",
+      "Bash(python3 -c \" from PIL import Image import os, glob files = sorted\\(glob.glob\\('C:/laragon/www/ridzali-dzebe/public/galerija/*.jpg'\\)\\) for f in files: with Image.open\\(f\\) as img: w,h = img.size ratio = w/h kind = 'portrait' if ratio < 0.85 else \\('square' if ratio < 1.2 else 'landscape'\\) if kind != 'landscape': name = os.path.basename\\(f\\) print\\(kind, f'{w}x{h}', f'ratio:{ratio:.2f}', name[:10]\\) \")",
+      "Bash(node -e:*)",
+      "Bash(npx next:*)"
+    ]
+  }
+}

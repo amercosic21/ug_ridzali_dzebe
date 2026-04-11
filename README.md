@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# UG "Ridžali-Džebe"
+
+Official website of "Ridžali-Džebe" from Zavidovići, Bosnia and Herzegovina.
+
+## About
+
+Landing page for the Ridžali-Džebe recreational area featuring a photo gallery and information about the memorial football tournament held annually since 1996.
+
+## Tech Stack
+
+- [Next.js 16](https://nextjs.org/) — React framework
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS v4](https://tailwindcss.com/)
+- [Vercel](https://vercel.com/) — hosting
+
+## Pages
+
+- `/` — Landing page (Hero, About, Memorial, Tournament, Contact)
+- `/galerija` — Photo gallery (112 images, lightbox, pagination)
+- `/politika-privatnosti` — Privacy policy
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/
+│   ├── page.tsx                  # Home page
+│   ├── layout.tsx                # Root layout, metadata, fonts
+│   ├── globals.css               # Global styles and animations
+│   ├── galerija/page.tsx         # Gallery page
+│   └── politika-privatnosti/     # Privacy policy
+├── components/                   # React components
+│   ├── Hero.tsx
+│   ├── Navbar.tsx
+│   ├── About.tsx
+│   ├── Memorial.tsx
+│   ├── Tournament.tsx
+│   ├── GalleryTeaser.tsx
+│   ├── Contact.tsx
+│   ├── Footer.tsx
+│   └── ...
+└── data/
+    └── gallery.ts                # Gallery image list
+public/
+├── galerija/                     # Gallery images
+├── izletiste/                    # Recreational area images
+└── logo.png
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contact
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Facebook: [Udruženje građana "Ridžali-Džebe"](https://www.facebook.com/profile.php?id=100083602091090)
+- Instagram: [@ug_ridzalidzebe](https://www.instagram.com/ug_ridzalidzebe)
+- Email: amercoski@gmail.com
