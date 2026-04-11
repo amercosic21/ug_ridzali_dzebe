@@ -26,8 +26,8 @@ export default function GalleryTeaser() {
   const picks = pickIndices.map((i) => ({ ...galleryItems[i], index: i }));
 
   return (
-    <section id="galerija" className="py-20 bg-amber">
-      <div className="max-w-[2000px] mx-auto px-6 md:px-10 lg:px-16">
+    <section id="galerija" className="py-12 sm:py-16 lg:py-20 bg-amber">
+      <div className="max-w-[2000px] mx-auto px-3 sm:px-6 md:px-10 lg:px-16">
         <ScrollReveal>
           <div className="mb-10 text-center">
             <h2 className="text-[clamp(1.6rem,3.5vw,2.2rem)] font-[family-name:var(--font-montserrat)] font-extrabold text-gray-900 mb-2">
@@ -39,7 +39,7 @@ export default function GalleryTeaser() {
 
         <ScrollReveal>
           <div
-            className="grid gap-2"
+            className="grid gap-0.5 sm:gap-1 lg:gap-2"
             style={{
               gridTemplateColumns: "repeat(12, 1fr)",
               gridTemplateRows: "repeat(8, clamp(28px, min(5vw, 8vh), 110px))",
@@ -49,7 +49,7 @@ export default function GalleryTeaser() {
               <div
                 key={i}
                 onClick={() => router.push(`/galerija?img=${img.index + 1}`)}
-                className="relative overflow-hidden rounded-xl group cursor-pointer"
+                className="relative overflow-hidden rounded-md sm:rounded-lg lg:rounded-xl group cursor-pointer"
                 style={{ gridColumn: layout[i].col, gridRow: layout[i].row }}
               >
                 <Image

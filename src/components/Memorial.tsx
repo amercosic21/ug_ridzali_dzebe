@@ -79,7 +79,7 @@ const orbs = [
 
 export default function Memorial() {
   return (
-    <section id="spomen" className="py-16 bg-memorial relative overflow-hidden">
+    <section id="spomen" className="py-10 sm:py-14 lg:py-16 bg-memorial relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -196,7 +196,7 @@ export default function Memorial() {
           </div>
 
           <ScrollReveal direction="right">
-            <div className="relative rounded-2xl overflow-hidden shadow-xl group min-h-[438px] sm:min-h-[625px] min-[768px]:min-h-[775px] min-[870px]:min-h-[875px] lg:min-h-0 h-full">
+            <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-xl group min-h-[438px] sm:min-h-[625px] min-[768px]:min-h-[775px] min-[870px]:min-h-[875px] lg:min-h-0 h-full">
               <Image
                 src="/izletiste/spomenik.jpg"
                 alt="Spomenik na izletištu pri zalasku sunca"

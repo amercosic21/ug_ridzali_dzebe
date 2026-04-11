@@ -82,14 +82,14 @@ function GalerijaContent() {
         </div>
 
         <div className="max-w-[1560px] mx-auto px-6 md:px-10 lg:px-16 py-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 lg:gap-4 mb-10">
             {pageItems.map((item, i) => {
               const globalIndex = (page - 1) * ITEMS_PER_PAGE + i;
               return (
                 <div
                   key={globalIndex}
                   onClick={() => openLightbox(globalIndex)}
-                  className="relative rounded-xl overflow-hidden aspect-[4/3] cursor-pointer group"
+                  className="relative rounded-lg sm:rounded-xl overflow-hidden aspect-[4/3] cursor-pointer group"
                 >
                   <Image
                     src={item.src}

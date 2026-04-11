@@ -73,7 +73,7 @@ const timeline = [
 
 export default function Tournament() {
   return (
-    <section id="turnir" className="py-16 bg-charcoal relative overflow-hidden">
+    <section id="turnir" className="py-10 sm:py-14 lg:py-16 bg-charcoal relative overflow-hidden">
       <div className="relative z-10 max-w-[1560px] mx-auto px-6 md:px-10 lg:px-16">
         <ScrollReveal>
           <div className="text-center mb-14">

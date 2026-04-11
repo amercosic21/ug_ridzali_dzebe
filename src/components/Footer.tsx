@@ -12,7 +12,7 @@ const navLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-night text-green-100/60 pt-14 pb-8 relative overflow-hidden">
+    <footer className="bg-night text-green-100/60 pt-10 pb-6 sm:pt-12 sm:pb-7 lg:pt-14 lg:pb-8 relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="max-w-[1560px] mx-auto px-6 md:px-10 lg:px-16">

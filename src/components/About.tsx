@@ -169,7 +169,7 @@ const facilities = [
 
 export default function About() {
   return (
-    <section id="o-nama" className="py-16 bg-cream relative">
+    <section id="o-nama" className="py-10 sm:py-14 lg:py-16 bg-cream relative">
       <div className="max-w-[1560px] mx-auto px-6 md:px-10 lg:px-16">
         {/* Header */}
         <ScrollReveal>
@@ -185,7 +185,7 @@ export default function About() {
         </ScrollReveal>
 
         {/* Flex row: text left half, teren right half. Collage absolute below. */}
-        <div className="relative flex flex-col lg:flex-row gap-8 lg:gap-0 lg:items-start">
+        <div className="relative flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-0 lg:items-start">
           {/* LEFT: text */}
           <ScrollReveal direction="left" className="w-full lg:w-1/2 lg:pr-12">
             <h3 className="text-2xl font-[family-name:var(--font-montserrat)] font-bold text-gray-800 mb-5">
@@ -236,7 +236,7 @@ export default function About() {
             direction="right"
             className="w-full lg:w-1/2 flex lg:justify-end z-[1]"
           >
-            <div className="w-full lg:w-[90%] rounded-2xl overflow-hidden shadow-xl group">
+            <div className="w-full lg:w-[90%] rounded-xl sm:rounded-2xl overflow-hidden shadow-xl group">
               <Image
                 src="/izletiste/stadion.jpg"
                 alt="Stadion"
@@ -249,9 +249,9 @@ export default function About() {
           </ScrollReveal>
 
           {/* Collage images — flow row on small/medium, absolute on lg+ */}
-          <div className="grid grid-cols-2 gap-3 lg:hidden">
-            <ScrollReveal direction="left" className="row-span-2">
-              <div className="overflow-hidden rounded-2xl shadow-lg group h-full">
+          <div className="grid grid-cols-2 grid-rows-2 gap-2 sm:gap-3 lg:hidden">
+            <ScrollReveal direction="left" className="row-span-2 h-full">
+              <div className="overflow-hidden rounded-xl sm:rounded-2xl shadow-lg group h-full">
                 <Image
                   src="/izletiste/nadstresnica.webp"
                   alt="Nadstrešnica pri zalasku sunca"
@@ -262,8 +262,8 @@ export default function About() {
                 />
               </div>
             </ScrollReveal>
-            <ScrollReveal direction="right">
-              <div className="overflow-hidden rounded-2xl shadow-lg group">
+            <ScrollReveal direction="right" className="h-full">
+              <div className="overflow-hidden rounded-xl sm:rounded-2xl shadow-lg group h-full">
                 <Image
                   src="/izletiste/stadion2.webp"
                   alt="Stadion sa plavim stolicama"
@@ -274,8 +274,8 @@ export default function About() {
                 />
               </div>
             </ScrollReveal>
-            <ScrollReveal direction="right">
-              <div className="overflow-hidden rounded-2xl shadow-lg group">
+            <ScrollReveal direction="right" className="h-full">
+              <div className="overflow-hidden rounded-xl sm:rounded-2xl shadow-lg group h-full">
                 <Image
                   src="/izletiste/igraliste.webp"
                   alt="Izletište sa klupama i igralištem"

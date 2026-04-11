@@ -63,7 +63,7 @@ export default function QuoteCountdown() {
   }, []);
 
   return (
-    <section className="py-16 bg-sage relative overflow-hidden">
+    <section className="py-10 sm:py-14 lg:py-16 bg-sage relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-gray-400/[0.08] rounded-full pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] border border-gray-400/[0.05] rounded-full pointer-events-none" />
 
