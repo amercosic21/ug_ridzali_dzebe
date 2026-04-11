@@ -86,7 +86,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="sm:justify-self-center">
+          <div className="sm:justify-self-center flex flex-col justify-between">
+            <div>
             <h4 className="font-[family-name:var(--font-montserrat)] font-semibold text-green-50/80 mb-4 text-sm uppercase tracking-wider">
               Kontakt
             </h4>
@@ -130,6 +131,15 @@ export default function Footer() {
                 </div>
                 <span>+387 61 750 827</span>
               </a>
+            </div>
+            </div>
+            <div className="mt-8 pt-4 border-t border-white/[0.05]">
+              <p className="text-[0.7rem] text-green-100/20 uppercase tracking-wider mb-1">
+                Autor web stranice
+              </p>
+              <p className="text-xs text-green-100/40">
+                Amer Ćosić
+              </p>
             </div>
           </div>
         </div>
