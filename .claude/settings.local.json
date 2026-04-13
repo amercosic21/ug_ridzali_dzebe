@@ -27,7 +27,8 @@
       "Bash(python3 -c ':*)",
       "Bash(python3 -c \" from PIL import Image import os, glob files = sorted\\(glob.glob\\('C:/laragon/www/ridzali-dzebe/public/galerija/*.jpg'\\)\\) for f in files: with Image.open\\(f\\) as img: w,h = img.size ratio = w/h kind = 'portrait' if ratio < 0.85 else \\('square' if ratio < 1.2 else 'landscape'\\) if kind != 'landscape': name = os.path.basename\\(f\\) print\\(kind, f'{w}x{h}', f'ratio:{ratio:.2f}', name[:10]\\) \")",
       "Bash(node -e:*)",
-      "Bash(npx next:*)"
+      "Bash(npx next:*)",
+      "Bash(git stash:*)"
     ]
   }
 }

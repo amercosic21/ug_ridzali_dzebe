@@ -15,9 +15,23 @@ const layout = [
   { col: "4 / 7", row: "5 / 7" },
   { col: "6 / 9", row: "7 / 9" },
   { col: "9 / 13", row: "5 / 9" },
-  { col: "3/ 7", row: "1 / 5" },
+  { col: "3 / 7", row: "1 / 5" },
   { col: "4 / 6", row: "7 / 9" },
   { col: "9 / 10", row: "3 / 5" },
+];
+
+const mobileLayout = [
+  { col: "1 / 4", row: "1 / 5" },
+  { col: "8 / 12", row: "4 / 7" },
+  { col: "4 / 8", row: "4 / 8" },
+  { col: "1 / 4", row: "5 / 8" },
+  { col: "1 / 6", row: "12 / 14" },
+  { col: "8 / 12", row: "7 / 10" },
+  { col: "1 / 8", row: "8 / 10" },
+  { col: "6 / 12", row: "10 / 14" },
+  { col: "4 / 9", row: "1 / 4" },
+  { col: "1 / 6", row: "10 / 12" },
+  { col: "9 / 12", row: "1 / 4" },
 ];
 
 export default function GalleryTeaser() {
@@ -38,8 +52,9 @@ export default function GalleryTeaser() {
         </ScrollReveal>
 
         <ScrollReveal>
+          {/* Desktop grid */}
           <div
-            className="grid gap-0.5 sm:gap-1 lg:gap-2"
+            className="hidden min-[450px]:grid gap-0.5 min-[450px]:gap-1 lg:gap-2"
             style={{
               gridTemplateColumns: "repeat(12, 1fr)",
               gridTemplateRows: "repeat(8, clamp(28px, min(5vw, 8vh), 110px))",
@@ -49,8 +64,37 @@ export default function GalleryTeaser() {
               <div
                 key={i}
                 onClick={() => router.push(`/galerija?img=${img.index + 1}`)}
-                className="relative overflow-hidden rounded-md sm:rounded-lg lg:rounded-xl group cursor-pointer"
+                className="relative overflow-hidden rounded-lg lg:rounded-xl group cursor-pointer"
                 style={{ gridColumn: layout[i].col, gridRow: layout[i].row }}
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt || "Galerija"}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 1024px) 40vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+              </div>
+            ))}
+          </div>
+          {/* Mobile grid */}
+          <div
+            className="grid min-[450px]:hidden gap-1"
+            style={{
+              gridTemplateColumns: "repeat(11, 1fr)",
+              gridTemplateRows: "repeat(13, 6vh)",
+            }}
+          >
+            {picks.map((img, i) => (
+              <div
+                key={i}
+                onClick={() => router.push(`/galerija?img=${img.index + 1}`)}
+                className="relative overflow-hidden rounded-md group cursor-pointer"
+                style={{
+                  gridColumn: mobileLayout[i].col,
+                  gridRow: mobileLayout[i].row,
+                }}
               >
                 <Image
                   src={img.src}

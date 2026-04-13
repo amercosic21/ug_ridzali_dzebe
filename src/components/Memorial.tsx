@@ -1,82 +1,6 @@
 import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 
-// Floating orbs: position, size, duration, delay, horizontal drift
-const orbs = [
-  {
-    left: "6%",
-    bottom: "12%",
-    size: "8px",
-    dur: "9s",
-    delay: "0s",
-    drift: "18px",
-  },
-  {
-    left: "18%",
-    bottom: "30%",
-    size: "6px",
-    dur: "12s",
-    delay: "3s",
-    drift: "-14px",
-  },
-  {
-    left: "32%",
-    bottom: "8%",
-    size: "7px",
-    dur: "10s",
-    delay: "6.5s",
-    drift: "22px",
-  },
-  {
-    left: "48%",
-    bottom: "22%",
-    size: "5px",
-    dur: "8s",
-    delay: "1.5s",
-    drift: "-20px",
-  },
-  {
-    left: "62%",
-    bottom: "15%",
-    size: "9px",
-    dur: "11s",
-    delay: "4s",
-    drift: "16px",
-  },
-  {
-    left: "76%",
-    bottom: "35%",
-    size: "6px",
-    dur: "13s",
-    delay: "7s",
-    drift: "-18px",
-  },
-  {
-    left: "88%",
-    bottom: "10%",
-    size: "7px",
-    dur: "9s",
-    delay: "2s",
-    drift: "12px",
-  },
-  {
-    left: "42%",
-    bottom: "40%",
-    size: "5px",
-    dur: "14s",
-    delay: "5s",
-    drift: "-16px",
-  },
-  {
-    left: "95%",
-    bottom: "25%",
-    size: "6px",
-    dur: "10s",
-    delay: "8s",
-    drift: "14px",
-  },
-];
-
 export default function Memorial() {
   return (
     <section id="spomen" className="py-10 sm:py-14 lg:py-16 bg-memorial relative overflow-hidden">
@@ -99,25 +23,6 @@ export default function Memorial() {
             "radial-gradient(ellipse at 50% 0%, rgba(255,174,37,0.04) 0%, transparent 60%)",
         }}
       />
-
-      {/* Floating light orbs */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {orbs.map((orb, i) => (
-          <div
-            key={i}
-            className="memorial-orb"
-            style={{
-              left: orb.left,
-              bottom: orb.bottom,
-              width: orb.size,
-              height: orb.size,
-              animationDuration: orb.dur,
-              animationDelay: orb.delay,
-              ["--orb-drift" as string]: orb.drift,
-            }}
-          />
-        ))}
-      </div>
 
       <div className="relative z-10 max-w-[1560px] mx-auto px-6 md:px-10 lg:px-16">
         <div className="memorial-grid grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">

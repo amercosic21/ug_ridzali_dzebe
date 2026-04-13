@@ -26,7 +26,9 @@ export default function Footer() {
                 height={36}
                 className="w-9 h-9 flex-shrink-0 rounded-full"
               />
-              <span>UG "Ridžali-Džebe"</span>
+              <span className="leading-tight text-center min-[740px]:whitespace-nowrap min-[740px]:text-left">
+                UG &quot;Ridžali-Džebe&quot;
+              </span>
             </div>
             <p className="text-sm leading-relaxed text-green-100/40 mb-4 max-w-[280px]">
               Udruženje građana posvećeno očuvanju tradicije, sjećanju na šehide
@@ -88,66 +90,64 @@ export default function Footer() {
 
           <div className="sm:justify-self-center flex flex-col justify-between">
             <div>
-            <h4 className="font-[family-name:var(--font-montserrat)] font-semibold text-green-50/80 mb-4 text-sm uppercase tracking-wider">
-              Kontakt
-            </h4>
-            <div className="flex flex-col gap-4 text-sm text-green-100/40">
-              <a
-                href="mailto:info@ugridzalidzebe.com"
-                className="inline-flex items-center gap-2.5 hover:text-accent transition-colors duration-200 group"
-              >
-                <div className="w-8 h-8 rounded-lg bg-white/[0.05] flex items-center justify-center group-hover:bg-accent/10 transition-colors flex-shrink-0">
-                  <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="M22 4l-10 8L2 4" />
-                  </svg>
-                </div>
-                <span>info@ugridzalidzebe.com</span>
-              </a>
-              <a
-                href="tel:+38761750827"
-                className="inline-flex items-center gap-2.5 hover:text-accent transition-colors duration-200 group"
-              >
-                <div className="w-8 h-8 rounded-lg bg-white/[0.05] flex items-center justify-center group-hover:bg-accent/10 transition-colors flex-shrink-0">
-                  <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                  </svg>
-                </div>
-                <span>+387 61 750 827</span>
-              </a>
+              <h4 className="font-[family-name:var(--font-montserrat)] font-semibold text-green-50/80 mb-4 text-sm uppercase tracking-wider">
+                Kontakt
+              </h4>
+              <div className="flex flex-col gap-4 text-sm text-green-100/40">
+                <a
+                  href="mailto:info@ugridzalidzebe.com"
+                  className="inline-flex items-center gap-2.5 hover:text-accent transition-colors duration-200 group"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-white/[0.05] flex items-center justify-center group-hover:bg-accent/10 transition-colors flex-shrink-0">
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <rect x="2" y="4" width="20" height="16" rx="2" />
+                      <path d="M22 4l-10 8L2 4" />
+                    </svg>
+                  </div>
+                  <span>info@ugridzalidzebe.com</span>
+                </a>
+                <a
+                  href="tel:+38761750827"
+                  className="inline-flex items-center gap-2.5 hover:text-accent transition-colors duration-200 group"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-white/[0.05] flex items-center justify-center group-hover:bg-accent/10 transition-colors flex-shrink-0">
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                  </div>
+                  <span>+387 61 750 827</span>
+                </a>
+              </div>
             </div>
-            </div>
-            <div className="mt-8 pt-4 border-t border-white/[0.05]">
+            <div className="mt-8 pt-4 border-t border-white/[0.05] max-[499.98px]:w-1/2">
               <p className="text-[0.7rem] text-green-100/20 uppercase tracking-wider mb-1">
-                Autor web stranice
+                Arhitekt stranice
               </p>
-              <p className="text-xs text-green-100/40">
-                Amer Ćosić
-              </p>
+              <p className="text-xs text-green-100/40">Amer Ćosić</p>
             </div>
           </div>
         </div>
 
         <div className="pt-6 text-center text-xs text-green-100/30">
           <p>
-            &copy; {new Date().getFullYear()} Udruženje građana "Ridžali-Džebe".
-            Sva prava zadržana.
+            &copy; {new Date().getFullYear()} Udruženje građana
+            &quot;Ridžali-Džebe&quot;. Sva prava zadržana.
           </p>
         </div>
       </div>

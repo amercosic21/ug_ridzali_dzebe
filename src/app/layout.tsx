@@ -65,7 +65,7 @@ export default function RootLayout({
       >
         <a
           href="#o-nama"
-          className="sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:top-4 focus-visible:left-1/2 focus-visible:-translate-x-1/2 focus-visible:z-[9999] focus-visible:bg-accent focus-visible:text-primary-dark focus-visible:px-4 focus-visible:py-2 focus-visible:rounded"
+          className="sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:bottom-6 focus-visible:right-20 focus-visible:z-[9999] focus-visible:bg-accent focus-visible:text-primary-dark focus-visible:px-4 focus-visible:py-2 focus-visible:rounded-full focus-visible:text-sm focus-visible:font-semibold focus-visible:shadow-lg focus-visible:h-12 focus-visible:flex focus-visible:items-center"
         >
           Preskoči na sadržaj
         </a>
