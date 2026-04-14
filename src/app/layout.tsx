@@ -39,6 +39,14 @@ export const metadata: Metadata = {
       "Tradicija, zajedništvo i memorijalni turnir u malom nogometu u Zavidovićima od 1996. godine.",
     type: "website",
     locale: "bs_BA",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: 'UG "Ridžali-Džebe" | Memorijalni turnir u malom nogometu',
+      },
+    ],
   },
   icons: {
     icon: "/logo.png",

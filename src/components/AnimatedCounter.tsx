@@ -17,16 +17,17 @@ export default function AnimatedCounter({
 }: AnimatedCounterProps) {
   const [count, setCount] = useState(0);
   const [started, setStarted] = useState(false);
-  const ref = useRef<HTMLSpanElement>(null);
+  const sentinelRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
+    const el = sentinelRef.current;
+    if (!el || started) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !started) {
+        if (entry.isIntersecting) {
           setStarted(true);
+          observer.disconnect();
         }
       },
       { threshold: 0.5 }
@@ -59,9 +60,11 @@ export default function AnimatedCounter({
   }, [started, target, duration]);
 
   return (
-    <span ref={ref} className={className}>
-      {count}
-      {suffix}
+    <span ref={sentinelRef} className={className}>
+      <span translate="no">
+        {count}
+        {suffix}
+      </span>
     </span>
   );
 }

@@ -217,7 +217,7 @@ export default function About() {
             </p>
 
             {/* Stats — stacked vertically below text */}
-            <div className="about-stats flex flex-col gap-5 mt-8 lg:pt-8 border-t border-gray-100">
+            <div className="about-stats relative flex flex-col gap-5 mt-8 lg:pt-8 border-t border-gray-100">
               {stats.map((stat) => (
                 <div key={stat.label} className="flex items-baseline gap-4">
                   <AnimatedCounter
@@ -228,13 +228,30 @@ export default function About() {
                   <span className="text-sm text-gray-400">{stat.label}</span>
                 </div>
               ))}
+
+              {/* Left collage image — positioned relative to stats on 1220px+ */}
+              <ScrollReveal
+                direction="left"
+                className="about-collage-1 hidden min-[1220px]:block z-[2]"
+              >
+                <div className="overflow-hidden rounded-2xl shadow-lg group">
+                  <Image
+                    src="/izletiste/stadion2.webp"
+                    alt="Stadion sa plavim stolicama"
+                    width={476}
+                    height={340}
+                    className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+                    sizes="24vw"
+                  />
+                </div>
+              </ScrollReveal>
             </div>
           </ScrollReveal>
 
           {/* RIGHT: stadion */}
           <ScrollReveal
             direction="right"
-            className="w-full lg:w-1/2 flex lg:justify-end z-[1]"
+            className="w-full lg:w-1/2 flex lg:justify-end lg:relative z-[1]"
           >
             <div className="w-full lg:w-[90%] rounded-xl sm:rounded-2xl overflow-hidden shadow-xl group">
               <Image
@@ -246,6 +263,57 @@ export default function About() {
                 sizes="(max-width: 1024px) 100vw, 45vw"
               />
             </div>
+
+            {/* Middle collage — positioned relative to stadion on 1220px+ */}
+            <ScrollReveal
+              direction="up"
+              className="about-collage-2 hidden lg:block z-[2]"
+            >
+              <div className="overflow-hidden rounded-2xl shadow-lg group">
+                <Image
+                  src="/izletiste/nadstresnica.webp"
+                  alt="Nadstrešnica pri zalasku sunca"
+                  width={340}
+                  height={476}
+                  className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+                  sizes="24vw"
+                />
+              </div>
+            </ScrollReveal>
+
+            {/* Right collage — positioned relative to stadion on 1220px+ */}
+            <ScrollReveal
+              direction="right"
+              className="about-collage-3 hidden lg:block z-[2]"
+            >
+              <div className="overflow-hidden rounded-2xl shadow-lg group">
+                <Image
+                  src="/izletiste/igraliste.webp"
+                  alt="Izletište sa klupama i igralištem"
+                  width={476}
+                  height={340}
+                  className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+                  sizes="24vw"
+                />
+              </div>
+            </ScrollReveal>
+
+            {/* Left collage — positioned relative to stadion on 1024-1220px */}
+            <ScrollReveal
+              direction="left"
+              className="about-collage-1-sm hidden lg:max-[1219.98px]:block z-[2]"
+            >
+              <div className="overflow-hidden rounded-2xl shadow-lg group">
+                <Image
+                  src="/izletiste/stadion2.webp"
+                  alt="Stadion sa plavim stolicama"
+                  width={476}
+                  height={340}
+                  className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+                  sizes="24vw"
+                />
+              </div>
+            </ScrollReveal>
           </ScrollReveal>
 
           {/* Collage images — flow row on small/medium, absolute on lg+ */}
@@ -288,52 +356,6 @@ export default function About() {
             </ScrollReveal>
           </div>
 
-          {/* Collage images — absolute positioned on lg+ */}
-          <ScrollReveal
-            direction="left"
-            className="about-collage-1 hidden lg:block lg:absolute lg:left-[20%] lg:top-[430px] lg:w-[26%] z-[2]"
-          >
-            <div className="overflow-hidden rounded-2xl shadow-lg group">
-              <Image
-                src="/izletiste/stadion2.webp"
-                alt="Stadion sa plavim stolicama"
-                width={476}
-                height={340}
-                className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
-                sizes="24vw"
-              />
-            </div>
-          </ScrollReveal>
-          <ScrollReveal
-            direction="up"
-            className="about-collage-2 hidden lg:block lg:absolute lg:left-[48%] lg:top-[300px] lg:w-[24%] z-[2]"
-          >
-            <div className="overflow-hidden rounded-2xl shadow-lg group">
-              <Image
-                src="/izletiste/nadstresnica.webp"
-                alt="Nadstrešnica pri zalasku sunca"
-                width={340}
-                height={476}
-                className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
-                sizes="24vw"
-              />
-            </div>
-          </ScrollReveal>
-          <ScrollReveal
-            direction="right"
-            className="about-collage-3 hidden lg:block lg:absolute lg:right-0 lg:top-[375px] lg:w-[26%] z-[2]"
-          >
-            <div className="overflow-hidden rounded-2xl shadow-lg group">
-              <Image
-                src="/izletiste/igraliste.webp"
-                alt="Izletište sa klupama i igralištem"
-                width={476}
-                height={340}
-                className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
-                sizes="24vw"
-              />
-            </div>
-          </ScrollReveal>
         </div>
 
         {/* Facilities icons */}

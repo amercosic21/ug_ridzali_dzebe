@@ -295,79 +295,58 @@ body {
 }
 
 /* ─── About section: collage responsive adjustments ─────────────────────────
-   Reference (default lg: values set in About.tsx):
-     collage-1 (stadion2):     left: 20%,  top: 430px, width: 26%
-     collage-2 (nadstresnica): left: 48%,  top: 300px, width: 24%
-     collage-3 (igraliste):    right: 0,   top: 375px, width: 26%
-   Use #o-nama prefix on every rule to beat Tailwind's lg: specificity.
+   All collage images are positioned absolutely relative to the stadion
+   ScrollReveal wrapper (right column, 50% width). Percentage-based top
+   values scale with the stadion image height.
+   Use #o-nama prefix on every rule to beat Tailwind's specificity.
 ─────────────────────────────────────────────────────────────────────────── */
 
-@media (min-width: 1024px) and (max-width: 1099.98px) {
+/* ─── About collage: stadion-relative positioning 1024–1220px ─── */
+@media (min-width: 1024px) and (max-width: 1219.98px) {
   #o-nama .about-facilities {
     margin-top: 3.75rem;
   }
-  #o-nama .about-collage-1 {
-    left: 73%;
-    top: 442px;
-    width: 27%;
-    z-index: 3;
-  }
   #o-nama .about-collage-2 {
-    left: 47%;
-    top: 255px;
-    width: 25%;
+    position: absolute;
+    left: -4%;
+    top: 90%;
+    width: 48%;
     z-index: 2;
   }
   #o-nama .about-collage-3 {
+    position: absolute;
     right: 0;
-    top: 255px;
-    width: 27%;
+    top: 103%;
+    width: 54%;
+  }
+  #o-nama .about-collage-1-sm {
+    position: absolute;
+    left: 46%;
+    top: 178%;
+    width: 54%;
+    z-index: 3;
   }
 }
 
-@media (min-width: 1100px) and (max-width: 1149.98px) {
-  #o-nama .about-facilities {
-    margin-top: 3.75rem;
-  }
+/* ─── About collage: stadion-relative positioning 1220px+ ─── */
+@media (min-width: 1220px) {
   #o-nama .about-collage-1 {
-    left: 73%;
-    top: 460px;
-    width: 27%;
-    z-index: 3;
+    position: absolute;
+    left: 47%;
+    top: 0;
+    width: 54%;
   }
   #o-nama .about-collage-2 {
-    left: 47%;
-    top: 230px;
-    width: 25%;
-    z-index: 2;
+    position: absolute;
+    left: -4%;
+    top: 90%;
+    width: 48%;
   }
   #o-nama .about-collage-3 {
+    position: absolute;
     right: 0;
-    top: 265px;
-    width: 27%;
-  }
-}
-
-@media (min-width: 1150px) and (max-width: 1219.98px) {
-  #o-nama .about-facilities {
-    margin-top: 3.75rem;
-  }
-  #o-nama .about-collage-1 {
-    left: 73%;
-    top: 495px;
-    width: 27%;
-    z-index: 3;
-  }
-  #o-nama .about-collage-2 {
-    left: 47%;
-    top: 230px;
-    width: 25%;
-    z-index: 2;
-  }
-  #o-nama .about-collage-3 {
-    right: 0;
-    top: 285px;
-    width: 27%;
+    top: 103%;
+    width: 54%;
   }
 }
 
@@ -375,109 +354,22 @@ body {
   #o-nama .about-facilities {
     margin-top: 4.375rem;
   }
-  #o-nama .about-collage-1 {
-    left: 20%;
-    top: 580px;
-    width: 26%;
-  }
-  #o-nama .about-collage-2 {
-    left: 48%;
-    top: 260px;
-    width: 24%;
-  }
-  #o-nama .about-collage-3 {
-    right: 0;
-    top: 305px;
-    width: 26%;
-  }
 }
 
-@media (min-width: 1268px) and (max-width: 1271.98px) {
+@media (min-width: 1268px) and (max-width: 1351.98px) {
   #o-nama .about-facilities {
     margin-top: 5rem;
   }
-  #o-nama .about-collage-1 {
-    left: 20%;
-    top: 550px;
-    width: 26%;
-  }
-  #o-nama .about-collage-2 {
-    left: 48%;
-    top: 260px;
-    width: 24%;
-  }
-  #o-nama .about-collage-3 {
-    right: 0;
-    top: 315px;
-    width: 26%;
-  }
 }
 
-@media (min-width: 1272px) and (max-width: 1351.98px) {
-  #o-nama .about-facilities {
-    margin-top: 5rem;
-  }
-  #o-nama .about-collage-1 {
-    left: 19%;
-    top: 504px;
-    width: 27%;
-  }
-  #o-nama .about-collage-2 {
-    left: 48%;
-    top: 260px;
-    width: 24%;
-  }
-  #o-nama .about-collage-3 {
-    right: 0;
-    top: 315px;
-    width: 26%;
-  }
-}
-
-@media (min-width: 1352px) and (max-width: 1419.98px) {
+@media (min-width: 1352px) and (max-width: 1492px) {
   #o-nama .about-facilities {
     margin-top: 8.125rem;
-  }
-  #o-nama .about-collage-1 {
-    left: 19%;
-    top: 504px;
-    width: 27%;
-  }
-  #o-nama .about-collage-2 {
-    left: 48%;
-    top: 270px;
-    width: 24%;
-  }
-  #o-nama .about-collage-3 {
-    right: 0;
-    top: 335px;
-    width: 26%;
-  }
-}
-
-@media (min-width: 1420px) and (max-width: 1492px) {
-  #o-nama .about-facilities {
-    margin-top: 8.125rem;
-  }
-  #o-nama .about-collage-1 {
-    left: 18%;
-    top: 504px;
-    width: 28%;
-  }
-  #o-nama .about-collage-2 {
-    left: 48%;
-    top: 300px;
-    width: 24%;
-  }
-  #o-nama .about-collage-3 {
-    right: 0;
-    top: 355px;
-    width: 26%;
   }
 }
 
 @media (min-width: 1493px) {
   #o-nama .about-facilities {
-    margin-top: 12rem;
+    margin-top: 11rem;
   }
 }
