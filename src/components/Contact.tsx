@@ -41,7 +41,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-gray-800 font-semibold">Udruženje građana &ldquo;Ridžali-Džebe&rdquo;</span>
+                    <span className="text-gray-800 font-semibold">Udruženje građana <span translate="no">&ldquo;Ridžali-Džebe&rdquo;</span></span>
                     <span className="text-gray-400 text-xs">Pratite nas za novosti</span>
                   </div>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="ml-auto text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -77,7 +77,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-gray-700 font-medium text-sm">Ridžali / Džebe, Zavidovići</span>
+                    <span className="text-gray-700 font-medium text-sm" translate="no">Ridžali / Džebe, Zavidovići</span>
                     <span className="text-gray-400 text-xs">Bosna i Hercegovina</span>
                   </div>
                 </div>

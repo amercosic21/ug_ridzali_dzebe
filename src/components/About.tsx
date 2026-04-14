@@ -189,7 +189,7 @@ export default function About() {
           {/* LEFT: text */}
           <ScrollReveal direction="left" className="w-full lg:w-1/2 lg:pr-12">
             <h3 className="text-2xl font-[family-name:var(--font-montserrat)] font-bold text-gray-800 mb-5">
-              Ridžali i Džebe
+              <span translate="no">Ridžali i Džebe</span>
             </h3>
             <p className="text-gray-600 mb-4 leading-relaxed">
               Ridžali i Džebe su naselja u općini Zavidovići, smještena u srcu

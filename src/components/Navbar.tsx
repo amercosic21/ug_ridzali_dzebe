@@ -105,7 +105,7 @@ export default function Navbar() {
             className="w-10 h-10 flex-shrink-0 rounded-full"
           />
           <span className="font-[family-name:var(--font-montserrat)] group-hover:text-accent transition-colors duration-200">
-            UG "Ridžali-Džebe"
+            UG <span translate="no">"Ridžali-Džebe"</span>
           </span>
         </a>
 

@@ -19,6 +19,7 @@ export default function Lightbox({
   const [loaded, setLoaded] = useState(true);
   const indexRef = useRef(startIndex);
   const touchStartX = useRef(0);
+  const wasPinch = useRef(false);
 
   const goTo = useCallback((newIndex: number) => {
     indexRef.current = newIndex;
@@ -49,7 +50,12 @@ export default function Lightbox({
     };
   }, [onClose, prev, next]);
 
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (e.touches.length > 1) wasPinch.current = true;
+  };
+
   const handleTouchEnd = (e: React.TouchEvent) => {
+    if (wasPinch.current) return;
     const delta = touchStartX.current - e.changedTouches[0].clientX;
     if (Math.abs(delta) > 50) {
       if (delta > 0) next();
@@ -66,7 +72,11 @@ export default function Lightbox({
     <div
       className="fixed inset-0 z-[2000] bg-black/92 flex items-center justify-center"
       onClick={onClose}
-      onTouchStart={(e) => (touchStartX.current = e.touches[0].clientX)}
+      onTouchStart={(e) => {
+        touchStartX.current = e.touches[0].clientX;
+        wasPinch.current = false;
+      }}
+      onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
       {/* Preloader */}

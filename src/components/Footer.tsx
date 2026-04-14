@@ -27,7 +27,7 @@ export default function Footer() {
                 className="w-9 h-9 flex-shrink-0 rounded-full"
               />
               <span className="leading-tight text-center min-[740px]:whitespace-nowrap min-[740px]:text-left">
-                UG &quot;Ridžali-Džebe&quot;
+                UG <span translate="no">&quot;Ridžali-Džebe&quot;</span>
               </span>
             </div>
             <p className="text-sm leading-relaxed text-green-100/40 mb-4 max-w-[280px]">
@@ -147,7 +147,7 @@ export default function Footer() {
         <div className="pt-6 text-center text-xs text-green-100/30">
           <p>
             &copy; {new Date().getFullYear()} Udruženje građana
-            &quot;Ridžali-Džebe&quot;. Sva prava zadržana.
+            <span translate="no">&quot;Ridžali-Džebe&quot;</span>. Sva prava zadržana.
           </p>
         </div>
       </div>

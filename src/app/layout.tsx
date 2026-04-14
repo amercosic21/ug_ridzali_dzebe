@@ -19,6 +19,7 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ridzalidzebe.ba"),
   title: 'UG "Ridžali-Džebe" | Memorijalni turnir u malom nogometu',
   description:
     "Udruženje građana Ridžali Džebe - Memorijalni turnir u malom nogometu koji se održava od 1996. godine u Zavidovićima. Izletište, sport, zajedništvo i sjećanje.",
@@ -59,6 +60,30 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.google.com" />
         <link rel="preconnect" href="https://maps.googleapis.com" />
         <link rel="preconnect" href="https://maps.gstatic.com" crossOrigin="anonymous" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: 'Udruženje građana "Ridžali-Džebe"',
+              url: "https://ridzalidzebe.ba",
+              logo: "https://ridzalidzebe.ba/logo.png",
+              foundingDate: "2024",
+              description:
+                "Udruženje građana posvećeno očuvanju tradicije, sjećanju na šehide i jačanju zajednice kroz sport i kulturu.",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Zavidovići",
+                addressCountry: "BA",
+              },
+              sameAs: [
+                "https://www.facebook.com/profile.php?id=100083602091090",
+                "https://www.instagram.com/ug_ridzalidzebe",
+              ],
+            }),
+          }}
+        />
       </head>
       <body
         className={`${montserrat.variable} ${openSans.variable} antialiased`}

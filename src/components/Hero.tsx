@@ -575,7 +575,7 @@ export default function Hero() {
           <span className="block text-green-100/90 text-[clamp(0.85rem,2vw,1.1rem)] font-semibold uppercase tracking-[0.22em] mb-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
             Udruženje građana
           </span>
-          <span className="text-accent block drop-shadow-[0_2px_16px_rgba(255,174,37,0.4)]">
+          <span className="text-accent block drop-shadow-[0_2px_16px_rgba(255,174,37,0.4)]" translate="no">
             "Ridžali-Džebe"
           </span>
         </h1>
