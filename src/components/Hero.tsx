@@ -1,5 +1,27 @@
 import HeroBgFix from "./HeroBgFix";
 
+const portraitFixScript = `
+  (function () {
+    var w = innerWidth, h = innerHeight;
+    if (h <= w) return;
+
+    var svg = document.querySelector("#pocetna svg");
+    var box = svg && svg.parentElement;
+    if (!svg || !box) return;
+
+    var vbH = Math.max(Math.ceil(850 * h / w), 810);
+    var r   = h / w;
+    var t   = r - 1;
+
+    svg.setAttribute("viewBox", "0 " + -(vbH - 810) + " 1440 " + vbH);
+    svg.setAttribute("preserveAspectRatio", "xMidYMax slice");
+
+    box.style.width           = "100%";
+    box.style.transformOrigin = "center bottom";
+    box.style.transform       = "scaleY(" + (1 + t * (0.55 + t * 0.08)).toFixed(3) + ")";
+  })();
+`;
+
 export default function Hero() {
   return (
     <section
@@ -11,12 +33,14 @@ export default function Hero() {
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 h-full"
           style={{ width: "max(100%, calc(100vh * 1440 / 810))" }}
+          suppressHydrationWarning
         >
           <svg
             viewBox="0 0 1440 810"
             preserveAspectRatio="xMidYMid slice"
             className="w-full h-full"
             xmlns="http://www.w3.org/2000/svg"
+            suppressHydrationWarning
           >
             <defs>
               <linearGradient
@@ -557,6 +581,7 @@ export default function Hero() {
             />
           </svg>
         </div>
+        <script dangerouslySetInnerHTML={{ __html: portraitFixScript }} />
       </div>
 
       <div

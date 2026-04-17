@@ -39,7 +39,6 @@ export default function HeroBgFix() {
       }
     }
 
-    apply();
     window.addEventListener("resize", apply);
     return () => window.removeEventListener("resize", apply);
   }, []);
