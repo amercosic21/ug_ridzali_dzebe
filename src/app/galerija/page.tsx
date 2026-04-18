@@ -1,11 +1,13 @@
 "use client";
 
-import { Suspense, useState, useEffect, useCallback } from "react";
+import { Suspense, useState, useEffect, useCallback, useRef } from "react";
 import { useSearchParams } from "next/navigation";
+import { flushSync } from "react-dom";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Lightbox from "@/components/Lightbox";
+import { SearchPlusIcon } from "@/components/icons";
 import { galleryItems } from "@/data/gallery";
 
 const ITEMS_PER_PAGE = 9;
@@ -15,6 +17,7 @@ function GalerijaContent() {
   const [page, setPage] = useState(1);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const paginationRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const imgParam = searchParams.get("img");
@@ -41,10 +44,25 @@ function GalerijaContent() {
   }, []);
 
   const totalPages = Math.ceil(galleryItems.length / ITEMS_PER_PAGE);
+  const lastPageIsPartial = galleryItems.length % ITEMS_PER_PAGE !== 0;
   const pageItems = galleryItems.slice(
     (page - 1) * ITEMS_PER_PAGE,
     page * ITEMS_PER_PAGE
   );
+
+  const goToPage = (p: number) => {
+    if (p === page) return;
+    const involvesPartial =
+      lastPageIsPartial && (p === totalPages || page === totalPages);
+    if (!involvesPartial) {
+      setPage(p);
+      return;
+    }
+    const before = paginationRef.current?.getBoundingClientRect().top ?? 0;
+    flushSync(() => setPage(p));
+    const after = paginationRef.current?.getBoundingClientRect().top ?? 0;
+    window.scrollBy(0, after - before);
+  };
 
   const getPageNumbers = () => {
     if (totalPages <= 7)
@@ -81,7 +99,7 @@ function GalerijaContent() {
         </div>
 
         <div className="max-w-[1560px] mx-auto px-6 md:px-10 lg:px-16 py-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 lg:gap-4 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 lg:gap-4 mb-10">
             {pageItems.map((item, i) => {
               const globalIndex = (page - 1) * ITEMS_PER_PAGE + i;
               return (
@@ -100,19 +118,7 @@ function GalerijaContent() {
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors duration-300 flex items-center justify-center">
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/20 backdrop-blur-sm rounded-full p-3">
-                      <svg
-                        width="22"
-                        height="22"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="white"
-                        strokeWidth="2"
-                      >
-                        <circle cx="11" cy="11" r="8" />
-                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                        <line x1="11" y1="8" x2="11" y2="14" />
-                        <line x1="8" y1="11" x2="14" y2="11" />
-                      </svg>
+                      <SearchPlusIcon width={22} height={22} stroke="white" />
                     </div>
                   </div>
                 </div>
@@ -122,9 +128,12 @@ function GalerijaContent() {
 
           {totalPages > 1 && (
             <>
-              <div className="flex items-center justify-center gap-2 mt-4">
+              <div
+                ref={paginationRef}
+                className="flex items-center justify-center gap-2 mt-4"
+              >
                 <button
-                  onClick={() => setPage(page - 1)}
+                  onClick={() => goToPage(page - 1)}
                   disabled={page === 1}
                   className="w-10 h-10 rounded-full flex items-center justify-center border-2 border-gray-300 text-gray-500 hover:border-primary hover:text-primary disabled:opacity-30 disabled:cursor-not-allowed transition-all cursor-pointer bg-white"
                   aria-label="Prethodna stranica"
@@ -143,7 +152,7 @@ function GalerijaContent() {
                   ) : (
                     <button
                       key={p}
-                      onClick={() => setPage(p as number)}
+                      onClick={() => goToPage(p as number)}
                       className={`w-10 h-10 rounded-full flex items-center justify-center border-2 font-[family-name:var(--font-montserrat)] font-semibold text-sm transition-all cursor-pointer ${
                         page === p
                           ? "bg-primary border-primary text-white shadow-[0_2px_12px_rgba(27,94,32,0.3)]"
@@ -156,7 +165,7 @@ function GalerijaContent() {
                 )}
 
                 <button
-                  onClick={() => setPage(page + 1)}
+                  onClick={() => goToPage(page + 1)}
                   disabled={page === totalPages}
                   className="w-10 h-10 rounded-full flex items-center justify-center border-2 border-gray-300 text-gray-500 hover:border-primary hover:text-primary disabled:opacity-30 disabled:cursor-not-allowed transition-all cursor-pointer bg-white"
                   aria-label="Sljedeća stranica"

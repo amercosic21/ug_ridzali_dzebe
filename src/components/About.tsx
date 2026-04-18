@@ -1,6 +1,17 @@
 import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 import AnimatedCounter from "./AnimatedCounter";
+import {
+  FootballFieldIcon,
+  BasketballIcon,
+  PlaygroundIcon,
+  ShelterIcon,
+  GrillIcon,
+  WaterTapIcon,
+  ParkingIcon,
+  CameraIcon,
+} from "./icons/facilities";
+import { HomeIcon } from "./icons";
 
 const stats = [
   { number: 28, label: "Turnira održano" },
@@ -9,162 +20,14 @@ const stats = [
 ];
 
 const facilities = [
-  {
-    label: "Fudbalski teren",
-    icon: (
-      <svg
-        width="32"
-        height="32"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <circle cx="12" cy="12" r="10" />
-        <path d="M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20M2 12h20" />
-        <path d="M9.5 5.5L12 8l2.5-2.5M9.5 18.5L12 16l2.5 2.5" />
-      </svg>
-    ),
-  },
-  {
-    label: "Teren za košarku",
-    icon: (
-      <svg
-        width="32"
-        height="32"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <circle cx="12" cy="12" r="10" />
-        <path d="M4.93 4.93c4.08 2.38 4.08 11.76 0 14.14" />
-        <path d="M19.07 4.93c-4.08 2.38-4.08 11.76 0 14.14" />
-        <line x1="2" y1="12" x2="22" y2="12" />
-      </svg>
-    ),
-  },
-  {
-    label: "Dječije igralište",
-    icon: (
-      <svg
-        width="32"
-        height="32"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M2 22L12 2l10 20" />
-        <path d="M7 14h10" />
-        <circle cx="12" cy="18" r="1.5" />
-      </svg>
-    ),
-  },
-  {
-    label: "8 nadstrešnica",
-    icon: (
-      <svg
-        width="32"
-        height="32"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M3 11l9-7 9 7" />
-        <path d="M5 10v10h14V10" />
-        <line x1="5" y1="15" x2="19" y2="15" />
-        <line x1="9" y1="10" x2="9" y2="20" />
-        <line x1="15" y1="10" x2="15" y2="20" />
-      </svg>
-    ),
-  },
-  {
-    label: "Kamini za roštilj",
-    icon: (
-      <svg
-        width="32"
-        height="32"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect x="3" y="14" width="18" height="4" rx="1" />
-        <line x1="6" y1="18" x2="6" y2="22" />
-        <line x1="18" y1="18" x2="18" y2="22" />
-        <path d="M7 10c0-2 1.5-3 1.5-5" />
-        <path d="M12 10c0-2 1.5-3 1.5-5" />
-        <path d="M17 10c0-2 1.5-3 1.5-5" />
-      </svg>
-    ),
-  },
-  {
-    label: "Česme i WC",
-    icon: (
-      <svg
-        width="32"
-        height="32"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M12 2v6" />
-        <path d="M6 8h12a2 2 0 0 1 2 2c0 4-3 7-8 9-5-2-8-5-8-9a2 2 0 0 1 2-2z" />
-        <path d="M10 21h4" />
-      </svg>
-    ),
-  },
-  {
-    label: "Besplatan parking",
-    icon: (
-      <svg
-        width="32"
-        height="32"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect x="3" y="3" width="18" height="18" rx="3" />
-        <path d="M9 17V7h4a3 3 0 0 1 0 6H9" />
-      </svg>
-    ),
-  },
-  {
-    label: "Video nadzor",
-    icon: (
-      <svg
-        width="32"
-        height="32"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M23 7l-7 5 7 5V7z" />
-        <rect x="1" y="5" width="15" height="14" rx="2" />
-      </svg>
-    ),
-  },
+  { label: "Fudbalski teren", icon: <FootballFieldIcon /> },
+  { label: "Teren za košarku", icon: <BasketballIcon /> },
+  { label: "Dječije igralište", icon: <PlaygroundIcon /> },
+  { label: "8 nadstrešnica", icon: <ShelterIcon /> },
+  { label: "Kamini za roštilj", icon: <GrillIcon /> },
+  { label: "Česme i WC", icon: <WaterTapIcon /> },
+  { label: "Besplatan parking", icon: <ParkingIcon /> },
+  { label: "Video nadzor", icon: <CameraIcon /> },
 ];
 
 export default function About() {
@@ -363,18 +226,7 @@ export default function About() {
           <div className="about-facilities mt-8">
             <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 rounded-full mb-5">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  className="text-primary"
-                >
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                  <polyline points="9 22 9 12 15 12 15 22" />
-                </svg>
+                <HomeIcon width={16} height={16} className="text-primary" />
                 <span className="text-primary text-xs font-semibold uppercase tracking-wider">
                   Naše izletište
                 </span>

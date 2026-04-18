@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import ScrollReveal from "./ScrollReveal";
+import { CalendarIcon } from "./icons";
 
 const TOURNAMENT_DATE = new Date("2026-08-15T09:00:00+02:00");
 const TOURNAMENT_END = new Date("2026-08-16T23:00:00+02:00");
@@ -84,12 +85,12 @@ export default function QuoteCountdown() {
 
         <div className="my-14 flex items-center gap-4">
           <div className="flex-1 h-px bg-gray-300/40" />
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,174,37,0.5)" strokeWidth="1.5">
-            <rect x="3" y="4" width="18" height="18" rx="2" />
-            <line x1="16" y1="2" x2="16" y2="6" />
-            <line x1="8" y1="2" x2="8" y2="6" />
-            <line x1="3" y1="10" x2="21" y2="10" />
-          </svg>
+          <CalendarIcon
+            width={20}
+            height={20}
+            stroke="rgba(255,174,37,0.5)"
+            strokeWidth={1.5}
+          />
           <div className="flex-1 h-px bg-gray-300/40" />
         </div>
 
@@ -113,12 +114,7 @@ export default function QuoteCountdown() {
         ) : timeLeft ? (
           <ScrollReveal>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-accent/10 border border-accent/25 rounded-full mb-4">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent-dark">
-                <rect x="3" y="4" width="18" height="18" rx="2" />
-                <line x1="16" y1="2" x2="16" y2="6" />
-                <line x1="8" y1="2" x2="8" y2="6" />
-                <line x1="3" y1="10" x2="21" y2="10" />
-              </svg>
+              <CalendarIcon width={14} height={14} strokeWidth={2} className="text-accent-dark" />
               <span className="text-accent-dark text-sm font-semibold uppercase tracking-wider">
                 Sljedeći turnir
               </span>

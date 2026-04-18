@@ -1,0 +1,16 @@
+export const MIN_SCALE = 1;
+export const MAX_SCALE = 4;
+export const SWIPE_THRESHOLD = 70;
+export const SWIPE_THRESHOLD_MAX = 140;
+export const MOUSE_SWIPE_THRESHOLD = 220;
+export const MOUSE_SWIPE_THRESHOLD_MAX = 380;
+export const SWIPE_ANIMATION_MS = 150;
+export const DOUBLE_TAP_MS = 300;
+export const TAP_MAX_MS = 250;
+export const TAP_MAX_MOVE = 10;
+export const DOUBLE_TAP_MAX_DIST = 30;
+export const DOUBLE_TAP_FACTOR = 2;
+export const WHEEL_ZOOM_FACTOR = 1.15;
+export const BUTTON_ZOOM_FACTOR = 1.4;
+export const ZOOM_ANIMATION_MS = 500;
+export const ZOOM_EASING = "cubic-bezier(0.22, 1, 0.36, 1)";

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
+import { StarIcon, ClockCircleIcon } from "./icons";
 
 export default function Memorial() {
   return (
@@ -30,17 +31,7 @@ export default function Memorial() {
             <ScrollReveal>
               <div className="mb-10">
                 <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-heading-cool/10 border border-heading-cool/15 mb-5">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    className="text-text-cool"
-                  >
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                  </svg>
+                  <StarIcon className="text-text-cool" />
                 </div>
                 <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] font-[family-name:var(--font-montserrat)] font-extrabold mb-4 text-gray-900">
                   U spomen
@@ -83,17 +74,7 @@ export default function Memorial() {
             <ScrollReveal delay={400}>
               <div className="mt-8">
                 <div className="inline-flex items-center gap-3 px-6 py-3 bg-heading-cool/8 border border-heading-cool/15 rounded-full text-gray-800/60 text-sm">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z" />
-                    <path d="M12 6v6l4 2" />
-                  </svg>
+                  <ClockCircleIcon width={16} height={16} />
                   <span>Tri decenije sjećanja i zajedništva</span>
                 </div>
               </div>

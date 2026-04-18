@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { galleryItems } from "@/data/gallery";
 import ScrollReveal from "./ScrollReveal";
+import { ChevronRightIcon } from "./icons";
 
 const layout = [
   { col: "1 / 3", row: "1 / 5" },
@@ -118,18 +119,7 @@ export default function GalleryTeaser() {
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-[family-name:var(--font-montserrat)] font-semibold bg-accent text-primary-dark hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(255,174,37,0.35)] transition-all duration-300"
             >
               Pogledaj sve slike
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <polyline points="9 18 15 12 9 6" />
-              </svg>
+              <ChevronRightIcon width={16} height={16} />
             </Link>
           </div>
         </ScrollReveal>
