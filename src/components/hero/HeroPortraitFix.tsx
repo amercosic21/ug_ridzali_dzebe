@@ -1,6 +1,11 @@
 const portraitFixScript = `
   (function () {
-    var w = innerWidth, h = innerHeight;
+    var w = innerWidth;
+    var probe = document.createElement("div");
+    probe.style.cssText = "position:absolute;top:0;left:0;height:100lvh;width:1px;visibility:hidden;pointer-events:none;";
+    document.body.appendChild(probe);
+    var h = probe.offsetHeight || innerHeight;
+    document.body.removeChild(probe);
     if (h <= w) return;
 
     var svg = document.querySelector("#pocetna svg");

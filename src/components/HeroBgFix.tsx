@@ -12,10 +12,20 @@ export default function HeroBgFix() {
     const container = svg?.parentElement;
     if (!svg || !container) return;
 
+    function getLvh() {
+      const probe = document.createElement("div");
+      probe.style.cssText =
+        "position:absolute;top:0;left:0;height:100lvh;width:1px;visibility:hidden;pointer-events:none;";
+      document.body.appendChild(probe);
+      const h = probe.offsetHeight || window.innerHeight;
+      document.body.removeChild(probe);
+      return h;
+    }
+
     function apply() {
       if (!svg || !container) return;
       const w = window.innerWidth;
-      const h = window.innerHeight;
+      const h = getLvh();
       const isPortrait = h > w;
 
       if (isPortrait) {
@@ -33,7 +43,7 @@ export default function HeroBgFix() {
       } else {
         svg.setAttribute("viewBox", "0 0 1440 810");
         svg.setAttribute("preserveAspectRatio", "xMidYMid slice");
-        container.style.width = "max(100%, calc(100vh * 1440 / 810))";
+        container.style.width = "max(100%, calc(100lvh * 1440 / 810))";
         container.style.transformOrigin = "";
         container.style.transform = "";
       }

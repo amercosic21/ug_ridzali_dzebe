@@ -13,7 +13,7 @@ export default function Hero() {
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 h-full"
-          style={{ width: "max(100%, calc(100vh * 1440 / 810))" }}
+          style={{ width: "max(100%, calc(100lvh * 1440 / 810))" }}
           suppressHydrationWarning
         >
           <HeroScene />
