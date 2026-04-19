@@ -37,7 +37,7 @@ const mobileLayout = [
 
 export default function GalleryTeaser() {
   const router = useRouter();
-  const pickIndices = [15, 64, 14, 35, 67, 123, 71, 85, 87, 105, 12];
+  const pickIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const picks = pickIndices.map((i) => ({ ...galleryItems[i], index: i }));
 
   return (
