@@ -6,7 +6,7 @@ export interface GalleryItem {
 export const galleryItems: GalleryItem[] = [
   {
     src: "/galerija/528277706_722268367236560_523654382780508587_n.jpg",
-    alt: "Plave sjedalice pri zalasku sunca",
+    alt: "Tribina pri zalasku sunca",
   },
   {
     src: "/galerija/651152915_894018176728244_2609715522005896887_n.jpg",
@@ -126,7 +126,7 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     src: "/galerija/501255421_670035719126492_7989791847238889045_n.jpg",
-    alt: "Staza do nadstrešnice među drvećem",
+    alt: "Put iznad izletišta",
   },
   {
     src: "/galerija/525573967_717545977708799_3723821160251083816_n.jpg",
@@ -146,7 +146,7 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     src: "/galerija/541643555_744804721649591_3680440871699904828_n.jpg",
-    alt: "Česma i WC na izletištu",
+    alt: "Česma i nadstrešnica na izletištu",
   },
   {
     src: "/galerija/541657462_744805351649528_4283978424599835541_n.jpg",
@@ -170,7 +170,7 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     src: "/galerija/542538968_744804298316300_4898114308963838304_n.jpg",
-    alt: "Česma među borovim drvećem",
+    alt: "Nadstrešnica među borovim drvećem",
   },
   {
     src: "/galerija/543092226_744803871649676_134030113721062011_n.jpg",
@@ -182,7 +182,7 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     src: "/galerija/550276137_757941933669203_2808532761763820004_n.jpg",
-    alt: "Djeca na igralištu u jesenjoj atmosferi",
+    alt: "Djeca na igralištu u ljetnoj atmosferi",
   },
   {
     src: "/galerija/552813389_759553540174709_4679323525077028554_n.jpg",
@@ -190,7 +190,7 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     src: "/galerija/552910732_760380263425370_8380110611174974490_n.jpg",
-    alt: "Makadamski put do izletišta u jesenjoj magli",
+    alt: "Put do izletišta u jesenjoj magli",
   },
   {
     src: "/galerija/571347979_791573260306070_7271658229513652855_n.jpg",
@@ -246,7 +246,7 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     src: "/galerija/618047517_855102653953130_4526850951603915220_n.jpg",
-    alt: "Izletište u proljeće sa snijegom",
+    alt: "Izletište prekriveno snijegom",
   },
   {
     src: "/galerija/626731319_869127589217303_762855059891572911_n.jpg",
@@ -376,7 +376,6 @@ export const galleryItems: GalleryItem[] = [
     src: "/galerija/475813239_585646124232119_7282135467251254233_n.jpg",
     alt: "Spomenik i nadstrešnica među ariševima",
   },
-
   {
     src: "/galerija/475818820_585646147565450_315675915888375135_n.jpg",
     alt: "Spomenik među ariševima izbliza",
@@ -415,7 +414,7 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     src: "/galerija/481194576_604590665670998_4081679386534790433_n.jpg",
-    alt: "Okupljanje posjetilaca na izletištu u kasno popodne",
+    alt: "Okupljanje posjetilaca na izletištu tokom turnira",
   },
   {
     src: "/galerija/481255186_604589322337799_1531779855705248841_n.jpg",
@@ -435,7 +434,7 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     src: "/galerija/481454663_604590509004347_3311939491663873300_n.jpg",
-    alt: "Posjetioci na makadamskoj stazi pri zalasku sunca",
+    alt: "Posjetioci na turniru",
   },
   {
     src: "/galerija/481672217_606381448825253_2850123928712912396_n.jpg",
@@ -477,7 +476,6 @@ export const galleryItems: GalleryItem[] = [
     src: "/galerija/528987373_722268247236572_6570337247474684997_n.jpg",
     alt: "Bijele ljuljačke i spomenik pri zalasku sunca",
   },
-
   {
     src: "/galerija/533094859_729886299808100_8784823916302244640_n.jpg",
     alt: "Pogled sa tribine na teren sa zastavom Bosne i Hercegovine",
