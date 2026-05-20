@@ -35,10 +35,29 @@ const mobileLayout = [
   { col: "9 / 12", row: "1 / 4" },
 ];
 
+// Pinned src putanje umjesto indeksa — redoslijed u galleryItems se može
+// mijenjati (npr. sortiranje po kategorijama) a teaser i dalje prikazuje
+// tačno ove slike na tačno ovim pozicijama.
+const teaserSrcs = [
+  "/galerija/528277706_722268367236560_523654382780508587_n.jpg",
+  "/galerija/651152915_894018176728244_2609715522005896887_n.jpg",
+  "/galerija/526758195_719502884179775_7243515591184165999_n.jpg",
+  "/galerija/585610194_809802695149793_2098703234082125362_n.jpg",
+  "/galerija/652653638_894017313394997_689662643918842979_n.jpg",
+  "/galerija/611175174_841405065322889_2224016504308499957_n.jpg",
+  "/galerija/475448278_585646207565444_8322946572365835190_n.jpg",
+  "/galerija/480946101_604936725636392_2480714244560415557_n.jpg",
+  "/galerija/481252251_604936635636401_94689198265777491_n.jpg",
+  "/galerija/529712336_722268427236554_4535114938239014842_n.jpg",
+  "/galerija/526349436_719503100846420_3780145278207882522_n.jpg",
+];
+
 export default function GalleryTeaser() {
   const router = useRouter();
-  const pickIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  const picks = pickIndices.map((i) => ({ ...galleryItems[i], index: i }));
+  const picks = teaserSrcs.map((src) => {
+    const index = galleryItems.findIndex((item) => item.src === src);
+    return { ...galleryItems[index], index };
+  });
 
   return (
     <section id="galerija" className="py-12 sm:py-16 lg:py-20 bg-amber">

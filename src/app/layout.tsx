@@ -3,6 +3,7 @@ import { Montserrat, Open_Sans } from "next/font/google";
 import "./globals.css";
 import HashScroll from "@/components/HashScroll";
 import CookieBanner from "@/components/CookieBanner";
+import { siteInfo } from "@/data/site";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -74,20 +75,22 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: 'Udruženje građana "Ridžali-Džebe"',
-              url: "https://ridzalidzebe.ba",
-              logo: "https://ridzalidzebe.ba/logo.png",
-              foundingDate: "2024",
+              name: siteInfo.name,
+              url: siteInfo.url,
+              logo: `${siteInfo.url}/logo.png`,
+              foundingDate: siteInfo.foundingYear,
               description:
                 "Udruženje građana posvećeno očuvanju tradicije, sjećanju na šehide i jačanju zajednice kroz sport i kulturu.",
+              email: siteInfo.email,
+              telephone: siteInfo.phone.display,
               address: {
                 "@type": "PostalAddress",
-                addressLocality: "Zavidovići",
-                addressCountry: "BA",
+                addressLocality: siteInfo.address.city,
+                addressCountry: siteInfo.address.countryCode,
               },
               sameAs: [
-                "https://www.facebook.com/profile.php?id=100083602091090",
-                "https://www.instagram.com/ug_ridzalidzebe",
+                siteInfo.social.facebook.url,
+                siteInfo.social.instagram.url,
               ],
             }),
           }}

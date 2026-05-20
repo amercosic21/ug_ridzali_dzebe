@@ -2,7 +2,7 @@ import ScrollReveal from "./ScrollReveal";
 import {
   CalendarIcon,
   ClockIcon,
-  MusicIcon,
+  SparklesIcon,
   UsersIcon,
   FootballIcon,
 } from "./icons";
@@ -17,14 +17,14 @@ const infoCards = [
   {
     title: "Raspored",
     description:
-      "Utakmice malog nogometa igraju se od ranog jutra subotom i nedjeljom do 15:00h. Nakon toga slijedi muzički program.",
+      "Utakmice malog nogometa igraju se od ranog jutra subotom i nedjeljom do 15:00h. Nakon završetka utakmica slijedi dodjela nagrada i zajedničko druženje.",
     icon: <ClockIcon width={36} height={36} />,
   },
   {
-    title: "Zabava",
+    title: "Kulturno-zabavni program",
     description:
-      "U nedjelju nakon utakmica nastupa poznati pjevač ili bend. Muzika, druženje i slavlje traju do kasnih sati.",
-    icon: <MusicIcon width={36} height={36} />,
+      "Poslije finala slijedi zabavni program i opuštena atmosfera koja okuplja sve generacije naših mještana i gostiju do kasnih sati.",
+    icon: <SparklesIcon width={36} height={36} />,
   },
   {
     title: "Zajednica",
@@ -37,25 +37,32 @@ const infoCards = [
 const timeline = [
   {
     title: "Subota ujutro",
-    description: "Početak turnira. Timovi se okupljaju, atmosfera raste. Prve utakmice malog nogometa od ranog jutra.",
+    description:
+      "Početak turnira. Timovi se okupljaju, atmosfera raste. Prve utakmice malog nogometa od ranog jutra.",
   },
   {
     title: "Subota poslijepodne",
-    description: "Utakmice se igraju do 15:00h. Nakon završetka, druženje uz hranu i piće.",
+    description:
+      "Utakmice se igraju do 15:00h. Nakon završetka, druženje uz hranu i piće.",
   },
   {
     title: "Nedjelja ujutro",
-    description: "Nastavak turnira. Polufinalne i finalne utakmice. Napetost i navijanje na vrhuncu.",
+    description:
+      "Nastavak turnira. Polufinalne i finalne utakmice. Napetost i navijanje na vrhuncu.",
   },
   {
     title: "Nedjelja poslijepodne",
-    description: "Finale turnira i dodjela nagrada u 15:00h. Zatim nastupa pjevač, koncert i proslava traju do naveče.",
+    description:
+      "Finale turnira i dodjela nagrada u 15:00h. Nakon dodjele slijedi zajedničko druženje.",
   },
 ];
 
 export default function Tournament() {
   return (
-    <section id="turnir" className="py-10 sm:py-14 lg:py-16 bg-charcoal relative overflow-hidden">
+    <section
+      id="turnir"
+      className="py-10 sm:py-14 lg:py-16 bg-charcoal relative overflow-hidden"
+    >
       <div className="relative z-10 max-w-[1560px] mx-auto px-6 md:px-10 lg:px-16">
         <ScrollReveal>
           <div className="text-center mb-14">
@@ -77,7 +84,9 @@ export default function Tournament() {
             </h2>
             <div className="w-15 h-1 bg-accent mx-auto rounded mb-5" />
             <p className="text-base text-gray-500 max-w-[520px] mx-auto">
-              Tradicionalni turnir u malom nogometu na izletištu u Ridžalima. Dva dana sporta, muzike i zajedništva u prelijepom ambijentu borove šume
+              Tradicionalni turnir u malom nogometu na izletištu u Ridžalima.
+              Dva dana sporta, sjećanja i zajedništva u prelijepom ambijentu
+              borove šume
             </p>
           </div>
         </ScrollReveal>
@@ -109,12 +118,17 @@ export default function Tournament() {
               </h3>
               <div className="relative pl-8">
                 {timeline.map((item, i) => (
-                  <div key={i} className={`relative ${i < timeline.length - 1 ? "mb-6" : ""}`}>
+                  <div
+                    key={i}
+                    className={`relative ${i < timeline.length - 1 ? "mb-6" : ""}`}
+                  >
                     <div className="absolute -left-[22px] top-1 w-3 h-3 rounded-full bg-accent border-[2.5px] border-charcoal" />
                     <h4 className="font-[family-name:var(--font-montserrat)] font-bold text-sm mb-1 text-gray-800">
                       {item.title}
                     </h4>
-                    <p className="text-[0.85rem] text-gray-500 leading-relaxed">{item.description}</p>
+                    <p className="text-[0.85rem] text-gray-500 leading-relaxed">
+                      {item.description}
+                    </p>
                   </div>
                 ))}
               </div>

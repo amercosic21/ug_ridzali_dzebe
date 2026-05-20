@@ -4,7 +4,10 @@ import { StarIcon, ClockCircleIcon } from "./icons";
 
 export default function Memorial() {
   return (
-    <section id="spomen" className="py-10 sm:py-14 lg:py-16 bg-memorial relative overflow-hidden">
+    <section
+      id="spomen"
+      className="py-10 sm:py-14 lg:py-16 bg-memorial relative overflow-hidden"
+    >
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -58,9 +61,9 @@ export default function Memorial() {
                 </p>
                 <p className="text-gray-800/70 leading-relaxed mb-8">
                   Stalnim radom i trudom održavamo spomen, izletište i trudimo
-                  se da uvijek dodamo nešto novo. Kroz sport, muziku i
-                  zajedništvo, čuvamo sjećanje na naše šehide i prenosimo
-                  njihovu priču novim generacijama. Neka im je vječni rahmet.
+                  se da uvijek dodamo nešto novo. Kroz sport i zajedništvo,
+                  čuvamo sjećanje na naše šehide i prenosimo njihovu priču novim
+                  generacijama. Neka im je vječni rahmet.
                 </p>
                 <div className="border-t border-gray-800/10 pt-6">
                   <p className="text-heading-cool font-[family-name:var(--font-montserrat)] font-semibold italic text-lg leading-relaxed">

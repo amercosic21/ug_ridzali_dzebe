@@ -154,6 +154,16 @@ export function SearchMinusIcon({ width = 24, height = 24, strokeWidth = 2, ...p
   );
 }
 
+export function SparklesIcon({ width = 24, height = 24, strokeWidth = 1.8, ...props }: IconProps) {
+  return (
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M12 3l1.6 4.8L18.4 9.4l-4.8 1.6L12 15.8l-1.6-4.8L5.6 9.4l4.8-1.6L12 3z" />
+      <path d="M19 14l.9 2.7L22.6 17.6l-2.7.9L19 21.2l-.9-2.7L15.4 17.6l2.7-.9L19 14z" />
+      <path d="M5 14l.9 2.7L8.6 17.6l-2.7.9L5 21.2l-.9-2.7L1.4 17.6l2.7-.9L5 14z" />
+    </svg>
+  );
+}
+
 export function FootballIcon({ width = 32, height = 32, ...props }: IconProps) {
   return (
     <svg width={width} height={height} viewBox="0 0 952.1 952.1" fill="currentColor" {...props}>

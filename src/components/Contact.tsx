@@ -5,6 +5,7 @@ import {
   MapPinIcon,
   ArrowRightIcon,
 } from "./icons";
+import { siteInfo } from "@/data/site";
 
 export default function Contact() {
   return (
@@ -36,7 +37,7 @@ export default function Contact() {
               </p>
               <div className="flex flex-col gap-4">
                 <a
-                  href="https://www.facebook.com/profile.php?id=100083602091090"
+                  href={siteInfo.social.facebook.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 px-6 py-4 bg-white/50 border border-gray-300/40 rounded-xl font-medium transition-all duration-300 hover:bg-facebook/8 hover:border-facebook/30 hover:translate-x-1 hover:shadow-sm group"
@@ -52,7 +53,7 @@ export default function Contact() {
                 </a>
 
                 <a
-                  href="https://www.instagram.com/ug_ridzalidzebe"
+                  href={siteInfo.social.instagram.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 px-6 py-4 bg-white/50 border border-gray-300/40 rounded-xl font-medium transition-all duration-300 hover:bg-instagram/8 hover:border-instagram/30 hover:translate-x-1 hover:shadow-sm group"
@@ -61,8 +62,8 @@ export default function Contact() {
                     <InstagramIcon width={20} height={20} className="text-instagram" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-gray-800 font-semibold">ug_ridzalidzebe</span>
-                    <span className="text-gray-400 text-xs">@ug_ridzalidzebe</span>
+                    <span className="text-gray-800 font-semibold">{siteInfo.social.instagram.handle}</span>
+                    <span className="text-gray-400 text-xs">@{siteInfo.social.instagram.handle}</span>
                   </div>
                   <ArrowRightIcon width={16} height={16} className="ml-auto text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
@@ -72,8 +73,8 @@ export default function Contact() {
                     <MapPinIcon width={20} height={20} />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-gray-700 font-medium text-sm" translate="no">Ridžali / Džebe, Zavidovići</span>
-                    <span className="text-gray-400 text-xs">Bosna i Hercegovina</span>
+                    <span className="text-gray-700 font-medium text-sm" translate="no">{siteInfo.address.area}</span>
+                    <span className="text-gray-400 text-xs">{siteInfo.address.country}</span>
                   </div>
                 </div>
               </div>

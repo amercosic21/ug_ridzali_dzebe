@@ -5,6 +5,7 @@ import {
   EmailIcon,
   PhoneIcon,
 } from "./icons";
+import { siteInfo, mailtoHref, telHref } from "@/data/site";
 
 const navLinks = [
   { href: "#pocetna", label: "Početna" },
@@ -42,7 +43,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-3">
               <a
-                href="https://www.instagram.com/ug_ridzalidzebe"
+                href={siteInfo.social.instagram.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-white/[0.05] flex items-center justify-center text-green-100/40 hover:text-instagram hover:bg-instagram/10 transition-colors duration-200"
@@ -51,7 +52,7 @@ export default function Footer() {
                 <InstagramIcon width={18} height={18} />
               </a>
               <a
-                href="https://www.facebook.com/profile.php?id=100083602091090"
+                href={siteInfo.social.facebook.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-white/[0.05] flex items-center justify-center text-green-100/40 hover:text-facebook hover:bg-facebook/10 transition-colors duration-200"
@@ -87,22 +88,22 @@ export default function Footer() {
               </h4>
               <div className="flex flex-col gap-4 text-sm text-green-100/40">
                 <a
-                  href="mailto:info@ugridzalidzebe.com"
+                  href={mailtoHref}
                   className="inline-flex items-center gap-2.5 hover:text-accent transition-colors duration-200 group"
                 >
                   <div className="w-8 h-8 rounded-lg bg-white/[0.05] flex items-center justify-center group-hover:bg-accent/10 transition-colors flex-shrink-0">
                     <EmailIcon width={15} height={15} />
                   </div>
-                  <span>info@ugridzalidzebe.com</span>
+                  <span>{siteInfo.email}</span>
                 </a>
                 <a
-                  href="tel:+38761750827"
+                  href={telHref}
                   className="inline-flex items-center gap-2.5 hover:text-accent transition-colors duration-200 group"
                 >
                   <div className="w-8 h-8 rounded-lg bg-white/[0.05] flex items-center justify-center group-hover:bg-accent/10 transition-colors flex-shrink-0">
                     <PhoneIcon width={15} height={15} />
                   </div>
-                  <span>+387 61 750 827</span>
+                  <span>{siteInfo.phone.display}</span>
                 </a>
               </div>
             </div>

@@ -94,3 +94,25 @@ export function CameraIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function VolleyballIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} {...props}>
+      <circle cx="12" cy="12" r="10" />
+      <path d="M11.1 2.05a10 10 0 0 1 8.7 13.9" />
+      <path d="M2.05 11.1a10 10 0 0 1 13.9 8.7" />
+      <path d="M21.95 12.9a10 10 0 0 1-13.9-8.7" />
+    </svg>
+  );
+}
+
+export function PlugIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} {...props}>
+      <path d="M9 2v6" />
+      <path d="M15 2v6" />
+      <path d="M6 8h12v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8z" />
+      <path d="M12 16v6" />
+    </svg>
+  );
+}

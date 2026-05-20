@@ -4,8 +4,10 @@ import AnimatedCounter from "./AnimatedCounter";
 import {
   FootballFieldIcon,
   BasketballIcon,
+  VolleyballIcon,
   PlaygroundIcon,
   ShelterIcon,
+  PlugIcon,
   GrillIcon,
   WaterTapIcon,
   ParkingIcon,
@@ -22,8 +24,10 @@ const stats = [
 const facilities = [
   { label: "Fudbalski teren", icon: <FootballFieldIcon /> },
   { label: "Teren za košarku", icon: <BasketballIcon /> },
+  { label: "Teren za odbojku", icon: <VolleyballIcon /> },
   { label: "Dječije igralište", icon: <PlaygroundIcon /> },
   { label: "8 nadstrešnica", icon: <ShelterIcon /> },
+  { label: "Struja u nadstrešnicama", icon: <PlugIcon /> },
   { label: "Kamini za roštilj", icon: <GrillIcon /> },
   { label: "Česme i WC", icon: <WaterTapIcon /> },
   { label: "Besplatan parking", icon: <ParkingIcon /> },
@@ -73,10 +77,15 @@ export default function About() {
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
               Udruženje djeluje na principima dobrovoljnosti, solidarnosti i
-              ljubavi prema zavičaju. Pored turnira, aktivno radimo na
-              proširenju puteva, poboljšanju kanalizacije i rasvjete, te
-              izgradnji nove infrastrukture na izletištu, sve kroz zajedničke
-              akcije u kojima učestvuju mještani svih generacija.
+              ljubavi prema zavičaju. Cilj našeg udruženja je unapređenje života
+              svih naših mještana kroz razne aktivnosti poput rada na proširenju
+              puteva, poboljšanju kanalizacije i rasvjete te izgradnji nove
+              infrastrukture na izletištu, sve kroz zajedničke akcije u kojima
+              učestvuju mještani svih generacija. Također, tu je i rad na
+              uređenju i unapređenju našeg izletišta koje je izgrađeno oko
+              spomenika našim šehidima, onima koji su ostavili neizbrisiv trag u
+              našim životima. Svake godine u njihovu čast organizuje se
+              memorijalni turnir u malom nogometu.
             </p>
 
             {/* Stats — stacked vertically below text */}
@@ -112,11 +121,15 @@ export default function About() {
           </ScrollReveal>
 
           {/* RIGHT: stadion */}
-          <ScrollReveal
-            direction="right"
-            className="w-full lg:w-1/2 flex lg:justify-end lg:relative z-[1]"
-          >
-            <div className="w-full lg:w-[90%] rounded-xl sm:rounded-2xl overflow-hidden shadow-xl group">
+          {/* Wrapper is a plain div so each absolute-positioned collage child
+              animates independently. If this were a ScrollReveal, its opacity
+              would gate all children — making them appear together when the
+              parent's bounding box (just the stadion image) enters the viewport. */}
+          <div className="w-full lg:w-1/2 flex lg:justify-end lg:relative z-[1]">
+            <ScrollReveal
+              direction="right"
+              className="w-full lg:w-[90%] rounded-xl sm:rounded-2xl overflow-hidden shadow-xl group"
+            >
               <Image
                 src="/izletiste/stadion.jpg"
                 alt="Stadion"
@@ -125,7 +138,7 @@ export default function About() {
                 className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 45vw"
               />
-            </div>
+            </ScrollReveal>
 
             {/* Middle collage — positioned relative to stadion on 1220px+ */}
             <ScrollReveal
@@ -177,7 +190,7 @@ export default function About() {
                 />
               </div>
             </ScrollReveal>
-          </ScrollReveal>
+          </div>
 
           {/* Collage images — flow row on small/medium, absolute on lg+ */}
           <div className="grid grid-cols-2 grid-rows-2 gap-2 sm:gap-3 lg:hidden">
@@ -218,7 +231,6 @@ export default function About() {
               </div>
             </ScrollReveal>
           </div>
-
         </div>
 
         {/* Facilities icons */}
@@ -240,7 +252,7 @@ export default function About() {
                 za sve posjetioce.
               </p>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-10">
               {facilities.map((f, i) => (
                 <ScrollReveal key={f.label} delay={i * 80}>
                   <div className="flex flex-col items-center text-center gap-3 group">
