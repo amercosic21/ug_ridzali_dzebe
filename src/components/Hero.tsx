@@ -1,7 +1,7 @@
 import HeroBgFix from "./HeroBgFix";
 import HeroScene from "./hero/HeroScene";
 import HeroPortraitFix from "./hero/HeroPortraitFix";
-import { PlayIcon } from "./icons";
+import { FootballIcon } from "./icons";
 
 export default function Hero() {
   return (
@@ -58,7 +58,7 @@ export default function Hero() {
             href="#turnir"
             className="inline-flex items-center gap-2 px-7 py-3 sm:px-8 sm:py-3.5 rounded-full font-[family-name:var(--font-montserrat)] font-semibold text-sm sm:text-base bg-accent text-primary-dark border-2 border-accent hover:bg-accent-dark hover:border-accent-dark hover:-translate-y-0.5 hover:shadow-[0_4px_25px_rgba(255,174,37,0.4)] transition-all duration-300"
           >
-            <PlayIcon width={16} height={16} />
+            <FootballIcon width={18} height={18} aria-hidden="true" />
             O turniru
           </a>
           <a
