@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Montserrat, Open_Sans } from "next/font/google";
 import "./globals.css";
-import HashScroll from "@/components/HashScroll";
-import CookieBanner from "@/components/CookieBanner";
+import HashScroll from "@/components/effects/HashScroll";
+import CookieBanner from "@/components/effects/CookieBanner";
 import { siteInfo } from "@/data/site";
 
 const montserrat = Montserrat({
@@ -101,7 +101,7 @@ export default function RootLayout({
       >
         <a
           href="#o-nama"
-          className="sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:bottom-6 focus-visible:right-20 focus-visible:z-[9999] focus-visible:bg-accent focus-visible:text-primary-dark focus-visible:px-4 focus-visible:py-2 focus-visible:rounded-full focus-visible:text-sm focus-visible:font-semibold focus-visible:shadow-lg focus-visible:h-12 focus-visible:flex focus-visible:items-center"
+          className="sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:bottom-6 focus-visible:right-20 focus-visible:z-9999 focus-visible:bg-accent focus-visible:text-primary-dark focus-visible:px-4 focus-visible:py-2 focus-visible:rounded-full focus-visible:text-sm focus-visible:font-semibold focus-visible:shadow-lg focus-visible:h-12 focus-visible:flex focus-visible:items-center"
         >
           Preskoči na sadržaj
         </a>

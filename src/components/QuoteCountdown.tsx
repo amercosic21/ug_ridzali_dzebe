@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import ScrollReveal from "./ScrollReveal";
+import ScrollReveal from "@/components/effects/ScrollReveal";
 import { CalendarIcon } from "./icons";
 
 const TOURNAMENT_DATE = new Date("2026-08-15T09:00:00+02:00");
@@ -37,6 +37,9 @@ export default function QuoteCountdown() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // `mounted` gates the time-sensitive countdown so server and first client
+    // render match; the ticking values are then driven by the interval below.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
 
     const tick = () => {
@@ -65,10 +68,10 @@ export default function QuoteCountdown() {
 
   return (
     <section className="py-10 sm:py-14 lg:py-16 bg-sage relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-gray-400/[0.08] rounded-full pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] border border-gray-400/[0.05] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 border border-gray-400/8 rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-225 h-225 border border-gray-400/5 rounded-full pointer-events-none" />
 
-      <div className="relative z-10 max-w-[800px] mx-auto px-6 md:px-8 text-center">
+      <div className="relative z-10 max-w-200 mx-auto px-6 md:px-8 text-center">
         <ScrollReveal>
           <span className="text-accent text-7xl font-serif leading-none block mb-4">
             &ldquo;
@@ -78,7 +81,7 @@ export default function QuoteCountdown() {
             ujedini ljude na način na koji malo šta drugo može.
           </blockquote>
           <div className="w-12 h-0.5 bg-accent/60 mx-auto mb-4" />
-          <cite className="text-gray-400 text-sm not-italic font-[family-name:var(--font-montserrat)]">
+          <cite className="text-gray-400 text-sm not-italic font-display">
             Nelson Mandela
           </cite>
         </ScrollReveal>
@@ -104,7 +107,7 @@ export default function QuoteCountdown() {
                 Uživo
               </span>
             </div>
-            <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] font-[family-name:var(--font-montserrat)] font-extrabold mb-4 text-gray-900">
+            <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] font-display font-extrabold mb-4 text-gray-900">
               Turnir je u toku!
             </h2>
             <p className="text-lg text-gray-500">
@@ -128,8 +131,8 @@ export default function QuoteCountdown() {
                 { value: timeLeft.seconds, label: "Sekundi" },
               ].map((unit) => (
                 <div key={unit.label} className="flex flex-col items-center">
-                  <div className="w-[72px] h-[72px] sm:w-[96px] sm:h-[96px] bg-white/70 border border-gray-200/60 rounded-2xl flex items-center justify-center mb-2.5 shadow-sm">
-                    <span className="font-[family-name:var(--font-montserrat)] text-[1.8rem] sm:text-[2.5rem] font-extrabold text-gray-800">
+                  <div className="w-18 h-18 sm:w-24 sm:h-24 bg-white/70 border border-gray-200/60 rounded-2xl flex items-center justify-center mb-2.5 shadow-sm">
+                    <span className="font-display text-[1.8rem] sm:text-[2.5rem] font-extrabold text-gray-800">
                       {String(unit.value).padStart(2, "0")}
                     </span>
                   </div>

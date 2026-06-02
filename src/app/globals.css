@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 @theme inline {
+    /* Fonts — map next/font vars to a utility (font-display = Montserrat) */
+    --font-display: var(--font-montserrat);
+
     /* Brand */
     --color-primary: #3d7a1a;
     --color-primary-light: #54981f;

@@ -15,7 +15,7 @@ Landing page for the Ridžali-Džebe recreational area featuring a photo gallery
 
 ## Pages
 
-- `/` — Landing page (Hero, About, Memorial, Tournament, Contact)
+- `/` — Landing page (Hero, About, Memorial, QuoteCountdown, Tournament, GalleryTeaser, Contact)
 - `/galerija` — Photo gallery (112 images, lightbox, pagination)
 - `/politika-privatnosti` — Privacy policy
 
@@ -46,17 +46,22 @@ src/
 │   ├── galerija/page.tsx         # Gallery page
 │   └── politika-privatnosti/     # Privacy policy
 ├── components/                   # React components
-│   ├── Hero.tsx
-│   ├── Navbar.tsx
-│   ├── About.tsx
-│   ├── Memorial.tsx
-│   ├── Tournament.tsx
-│   ├── GalleryTeaser.tsx
-│   ├── Contact.tsx
-│   ├── Footer.tsx
-│   └── ...
+│   ├── Hero.tsx Navbar.tsx       # page sections + site chrome, composed by
+│   ├── About.tsx Memorial.tsx    #   app/page.tsx (each section's private parts
+│   ├── Tournament.tsx Contact.tsx#   live in a same-named folder below)
+│   ├── GalleryTeaser.tsx Footer.tsx
+│   ├── ui/                       # reusable primitives: Container, SectionHeading,
+│   │                            #   ZoomImage, Pagination, AnimatedCounter
+│   ├── effects/                  # global behaviors: ScrollReveal, ScrollProgress,
+│   │                            #   BackToTop, CookieBanner, HashScroll
+│   ├── about/                    # About breakpoint layouts + data
+│   ├── hero/  hero/scene/        # Hero fixes + HeroScene SVG primitives + data
+│   ├── contact/                  # ContactCard
+│   ├── lightbox/                 # Lightbox controls, carousel, gesture hooks
+│   └── icons/                    # SVG icon components
 └── data/
-    └── gallery.ts                # Gallery image list
+    ├── gallery.ts                # Gallery image list
+    └── site.ts                   # Contact info + navigation links
 public/
 ├── galerija/                     # Gallery images
 ├── izletiste/                    # Recreational area images

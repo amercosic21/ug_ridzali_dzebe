@@ -19,7 +19,7 @@ export default function ScrollProgress() {
 
   return (
     <div
-      className="fixed top-0 left-0 h-[3px] z-[60] transition-[width] duration-150"
+      className="fixed top-0 left-0 h-[3px] z-60 transition-[width] duration-150"
       style={{
         width: `${progress}%`,
         background: "linear-gradient(90deg, var(--color-primary), var(--color-accent))",

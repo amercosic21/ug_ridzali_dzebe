@@ -103,7 +103,7 @@ export default function Lightbox({
 
   return (
     <div
-      className="fixed inset-0 z-[2000] bg-black/92 overflow-hidden"
+      className="fixed inset-0 z-2000 bg-black/92 overflow-hidden"
       onMouseDown={handleBackdropMouseDown}
       onClick={handleBackdropClick}
       style={{ touchAction: "none" }}

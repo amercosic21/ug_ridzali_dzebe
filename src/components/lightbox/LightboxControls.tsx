@@ -86,7 +86,7 @@ export default function LightboxControls({
 
           <div
             onClick={(e) => e.stopPropagation()}
-            className="absolute bottom-6 left-1/2 -translate-x-1/2 text-green-100/50 text-sm font-[family-name:var(--font-montserrat)] z-10"
+            className="absolute bottom-6 left-1/2 -translate-x-1/2 text-green-100/50 text-sm font-display z-10"
           >
             {currentIndex + 1} / {total}
           </div>

@@ -3,15 +3,7 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-
-const links = [
-  { href: "#pocetna", label: "Početna" },
-  { href: "#o-nama", label: "O nama" },
-  { href: "#spomen", label: "Spomen" },
-  { href: "#turnir", label: "Turnir" },
-  { href: "/galerija", label: "Galerija" },
-  { href: "#kontakt", label: "Kontakt" },
-];
+import { navLinks } from "@/data/site";
 
 export default function Navbar() {
   const [navState, setNavState] = useState<"top" | "hidden" | "fixed">("top");
@@ -48,7 +40,7 @@ export default function Navbar() {
 
   useEffect(() => {
     if (!isHome) return;
-    const sectionIds = links
+    const sectionIds = navLinks
       .filter((l) => l.href.startsWith("#"))
       .map((l) => l.href.slice(1));
     const observer = new IntersectionObserver(
@@ -102,16 +94,16 @@ export default function Navbar() {
             alt="UG Ridžali Džebe logo"
             width={40}
             height={40}
-            className="w-10 h-10 flex-shrink-0 rounded-full"
+            className="w-10 h-10 shrink-0 rounded-full"
           />
-          <span className="font-[family-name:var(--font-montserrat)] group-hover:text-accent transition-colors duration-200">
-            UG <span translate="no">"Ridžali-Džebe"</span>
+          <span className="font-display group-hover:text-accent transition-colors duration-200">
+            UG <span translate="no">&quot;Ridžali-Džebe&quot;</span>
           </span>
         </a>
 
         {/* Mobile toggle */}
         <button
-          className="flex flex-col gap-[5px] min-[871px]:hidden bg-transparent border-none cursor-pointer p-1 z-[52]"
+          className="flex flex-col gap-[5px] min-[871px]:hidden bg-transparent border-none cursor-pointer p-1 z-52"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Otvori meni"
         >
@@ -129,7 +121,7 @@ export default function Navbar() {
         {/* Mobile backdrop */}
         {menuOpen && (
           <div
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[49] min-[871px]:hidden"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-49 min-[871px]:hidden"
             onClick={() => setMenuOpen(false)}
           />
         )}
@@ -138,14 +130,14 @@ export default function Navbar() {
         <ul
           className={`
             flex list-none gap-1
-            max-[870.98px]:fixed max-[870.98px]:top-0 max-[870.98px]:right-0 max-[870.98px]:w-[280px] max-[870.98px]:h-screen
+            max-[870.98px]:fixed max-[870.98px]:top-0 max-[870.98px]:right-0 max-[870.98px]:w-70 max-[870.98px]:h-screen
             max-[870.98px]:bg-night/98 max-[870.98px]:backdrop-blur-xl max-[870.98px]:flex-col max-[870.98px]:pt-20 max-[870.98px]:px-7 max-[870.98px]:pb-7
             max-[870.98px]:shadow-[-5px_0_30px_rgba(0,0,0,0.4)]
-            max-[870.98px]:transition-transform max-[870.98px]:duration-300 max-[870.98px]:z-[51]
+            max-[870.98px]:transition-transform max-[870.98px]:duration-300 max-[870.98px]:z-51
             ${menuOpen ? "max-[870.98px]:translate-x-0" : "max-[870.98px]:translate-x-full"}
           `}
         >
-          {links.map((link) => (
+          {navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={resolveHref(link.href)}

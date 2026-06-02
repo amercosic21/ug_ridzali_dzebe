@@ -1,5 +1,6 @@
-import Image from "next/image";
-import ScrollReveal from "./ScrollReveal";
+import ScrollReveal from "@/components/effects/ScrollReveal";
+import ZoomImage from "@/components/ui/ZoomImage";
+import Container from "@/components/ui/Container";
 import { StarIcon, ClockCircleIcon } from "./icons";
 
 export default function Memorial() {
@@ -28,7 +29,7 @@ export default function Memorial() {
         }}
       />
 
-      <div className="relative z-10 max-w-[1560px] mx-auto px-6 md:px-10 lg:px-16">
+      <Container className="relative z-10">
         <div className="memorial-grid grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
           <div>
             <ScrollReveal>
@@ -36,7 +37,7 @@ export default function Memorial() {
                 <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-heading-cool/10 border border-heading-cool/15 mb-5">
                   <StarIcon className="text-text-cool" />
                 </div>
-                <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] font-[family-name:var(--font-montserrat)] font-extrabold mb-4 text-gray-900">
+                <h2 className="text-[clamp(1.8rem,4vw,2.5rem)] font-display font-extrabold mb-4 text-gray-900">
                   U spomen
                 </h2>
                 <div className="w-15 h-1 bg-heading-cool/30 rounded mb-6" />
@@ -66,7 +67,7 @@ export default function Memorial() {
                   generacijama. Neka im je vječni rahmet.
                 </p>
                 <div className="border-t border-gray-800/10 pt-6">
-                  <p className="text-heading-cool font-[family-name:var(--font-montserrat)] font-semibold italic text-lg leading-relaxed">
+                  <p className="text-heading-cool font-display font-semibold italic text-lg leading-relaxed">
                     &ldquo;Oni koji su dali živote za slobodu žive vječno u
                     našim srcima.&rdquo;
                   </p>
@@ -85,18 +86,17 @@ export default function Memorial() {
           </div>
 
           <ScrollReveal direction="right">
-            <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-xl group min-h-[438px] sm:min-h-[625px] min-[768px]:min-h-[775px] min-[870px]:min-h-[875px] lg:min-h-0 h-full">
-              <Image
-                src="/izletiste/spomenik.jpg"
-                alt="Spomenik na izletištu pri zalasku sunca"
-                fill
-                className="object-cover object-[center_80%] transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 1024px) 90vw, 45vw"
-              />
-            </div>
+            <ZoomImage
+              src="/izletiste/spomenik.jpg"
+              alt="Spomenik na izletištu pri zalasku sunca"
+              fill
+              imageClassName="object-[center_80%]"
+              sizes="(max-width: 1024px) 90vw, 45vw"
+              className="relative rounded-xl sm:rounded-2xl shadow-xl min-h-[438px] sm:min-h-[625px] min-[768px]:min-h-[775px] min-[870px]:min-h-[875px] lg:min-h-0 h-full"
+            />
           </ScrollReveal>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

@@ -1,0 +1,6 @@
+{
+  "// note": "Tailwind v4 at-rules (@theme, @apply, @custom-variant…) are unknown to VS Code's built-in CSS validator; silence its false positives and let Tailwind CSS IntelliSense handle linting.",
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "less.lint.unknownAtRules": "ignore"
+}

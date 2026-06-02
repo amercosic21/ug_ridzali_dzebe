@@ -3,10 +3,12 @@
 import { Suspense, useState, useEffect, useCallback, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import { flushSync } from "react-dom";
-import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Lightbox from "@/components/Lightbox";
+import ZoomImage from "@/components/ui/ZoomImage";
+import Pagination from "@/components/ui/Pagination";
+import Container from "@/components/ui/Container";
 import { SearchPlusIcon } from "@/components/icons";
 import { galleryItems } from "@/data/gallery";
 
@@ -25,6 +27,8 @@ function GalerijaContent() {
       const num = parseInt(imgParam, 10);
       const idx = num - 1;
       if (!isNaN(idx) && idx >= 0 && idx < galleryItems.length) {
+        // Sync UI to the ?img= deep-link param (external state → React).
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setPage(Math.floor(idx / ITEMS_PER_PAGE) + 1);
         setLightboxIndex(idx);
         setLightboxOpen(true);
@@ -47,7 +51,7 @@ function GalerijaContent() {
   const lastPageIsPartial = galleryItems.length % ITEMS_PER_PAGE !== 0;
   const pageItems = galleryItems.slice(
     (page - 1) * ITEMS_PER_PAGE,
-    page * ITEMS_PER_PAGE
+    page * ITEMS_PER_PAGE,
   );
 
   const goToPage = (p: number) => {
@@ -64,32 +68,15 @@ function GalerijaContent() {
     window.scrollBy(0, after - before);
   };
 
-  const getPageNumbers = () => {
-    if (totalPages <= 7)
-      return Array.from({ length: totalPages }, (_, i) => i + 1);
-    const pages: (number | "...")[] = [1];
-    if (page > 3) pages.push("...");
-    for (
-      let p = Math.max(2, page - 1);
-      p <= Math.min(totalPages - 1, page + 1);
-      p++
-    ) {
-      pages.push(p);
-    }
-    if (page < totalPages - 2) pages.push("...");
-    pages.push(totalPages);
-    return pages;
-  };
-
   return (
     <>
       <Navbar />
       <main className="min-h-screen bg-gallery-body">
         <div className="bg-gallery pt-32 pb-14 text-center px-4">
-          <p className="text-white/50 font-[family-name:var(--font-montserrat)] font-semibold text-sm uppercase tracking-[0.2em] mb-3">
+          <p className="text-white/50 font-display font-semibold text-sm uppercase tracking-[0.2em] mb-3">
             Uspomene
           </p>
-          <h1 className="text-[clamp(2rem,5vw,3.2rem)] font-[family-name:var(--font-montserrat)] font-extrabold mb-5 text-white">
+          <h1 className="text-[clamp(2rem,5vw,3.2rem)] font-display font-extrabold mb-5 text-white">
             Galerija
           </h1>
           <p className="text-white/60 max-w-xl mx-auto text-base sm:text-lg leading-relaxed">
@@ -98,88 +85,38 @@ function GalerijaContent() {
           </p>
         </div>
 
-        <div className="max-w-[1560px] mx-auto px-6 md:px-10 lg:px-16 py-10">
+        <Container className="py-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 lg:gap-4 mb-10">
             {pageItems.map((item, i) => {
               const globalIndex = (page - 1) * ITEMS_PER_PAGE + i;
               return (
-                <div
+                <ZoomImage
                   key={globalIndex}
+                  src={item.src}
+                  alt={item.alt || `Slika ${globalIndex + 1}`}
+                  fill
+                  priority={page === 1 && i < 3}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   onClick={() => openLightbox(globalIndex)}
-                  className="relative rounded-lg sm:rounded-xl overflow-hidden aspect-[4/3] cursor-pointer group"
+                  className="relative rounded-lg sm:rounded-xl aspect-4/3 cursor-pointer"
                 >
-                  <Image
-                    src={item.src}
-                    alt={item.alt || `Slika ${globalIndex + 1}`}
-                    fill
-                    priority={page === 1 && i < 3}
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors duration-300 flex items-center justify-center">
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/20 backdrop-blur-sm rounded-full p-3">
                       <SearchPlusIcon width={22} height={22} stroke="white" />
                     </div>
                   </div>
-                </div>
+                </ZoomImage>
               );
             })}
           </div>
 
-          {totalPages > 1 && (
-            <>
-              <div
-                ref={paginationRef}
-                className="flex items-center justify-center gap-2 mt-4"
-              >
-                <button
-                  onClick={() => goToPage(page - 1)}
-                  disabled={page === 1}
-                  className="w-10 h-10 rounded-full flex items-center justify-center border-2 border-gray-300 text-gray-500 hover:border-primary hover:text-primary disabled:opacity-30 disabled:cursor-not-allowed transition-all cursor-pointer bg-white"
-                  aria-label="Prethodna stranica"
-                >
-                  &#8249;
-                </button>
-
-                {getPageNumbers().map((p, i) =>
-                  p === "..." ? (
-                    <span
-                      key={`ellipsis-${i}`}
-                      className="w-10 h-10 flex items-center justify-center text-gray-400 text-sm"
-                    >
-                      &hellip;
-                    </span>
-                  ) : (
-                    <button
-                      key={p}
-                      onClick={() => goToPage(p as number)}
-                      className={`w-10 h-10 rounded-full flex items-center justify-center border-2 font-[family-name:var(--font-montserrat)] font-semibold text-sm transition-all cursor-pointer ${
-                        page === p
-                          ? "bg-primary border-primary text-white shadow-[0_2px_12px_rgba(27,94,32,0.3)]"
-                          : "bg-white border-gray-300 text-gray-600 hover:border-primary hover:text-primary"
-                      }`}
-                    >
-                      {p}
-                    </button>
-                  )
-                )}
-
-                <button
-                  onClick={() => goToPage(page + 1)}
-                  disabled={page === totalPages}
-                  className="w-10 h-10 rounded-full flex items-center justify-center border-2 border-gray-300 text-gray-500 hover:border-primary hover:text-primary disabled:opacity-30 disabled:cursor-not-allowed transition-all cursor-pointer bg-white"
-                  aria-label="Sljedeća stranica"
-                >
-                  &#8250;
-                </button>
-              </div>
-
-              <p className="text-center text-sm text-gray-400 mt-4 font-[family-name:var(--font-montserrat)]">
-                Stranica {page} od {totalPages}
-              </p>
-            </>
-          )}
-        </div>
+          <Pagination
+            page={page}
+            totalPages={totalPages}
+            onPageChange={goToPage}
+            containerRef={paginationRef}
+          />
+        </Container>
       </main>
 
       <Footer />
@@ -192,7 +129,9 @@ function GalerijaContent() {
           }))}
           startIndex={lightboxIndex}
           onClose={closeLightbox}
-          onIndexChange={(idx) => window.history.replaceState(null, "", `/galerija?img=${idx + 1}`)}
+          onIndexChange={(idx) =>
+            window.history.replaceState(null, "", `/galerija?img=${idx + 1}`)
+          }
         />
       )}
     </>

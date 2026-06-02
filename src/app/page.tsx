@@ -7,8 +7,8 @@ import Tournament from "@/components/Tournament";
 import GalleryTeaser from "@/components/GalleryTeaser";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import ScrollProgress from "@/components/ScrollProgress";
-import BackToTop from "@/components/BackToTop";
+import ScrollProgress from "@/components/effects/ScrollProgress";
+import BackToTop from "@/components/effects/BackToTop";
 
 export default function Home() {
   return (

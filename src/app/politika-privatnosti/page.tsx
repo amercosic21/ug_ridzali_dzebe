@@ -9,7 +9,7 @@ export default function PrivacyPolicy() {
   return (
     <>
       <header className="bg-night pt-14 pb-10 text-center">
-        <div className="max-w-[800px] mx-auto px-6">
+        <div className="max-w-200 mx-auto px-6">
           <Link
             href="/"
             className="inline-flex items-center gap-1.5 text-green-100/50 hover:text-green-100/80 text-sm transition-colors mb-6"
@@ -19,7 +19,7 @@ export default function PrivacyPolicy() {
             </svg>
             Nazad na početnu
           </Link>
-          <h1 className="text-[clamp(1.8rem,4vw,2.5rem)] font-[family-name:var(--font-montserrat)] font-extrabold text-green-50 mb-3">
+          <h1 className="text-[clamp(1.8rem,4vw,2.5rem)] font-display font-extrabold text-green-50 mb-3">
             Politika privatnosti
           </h1>
           <div className="w-15 h-1 bg-accent mx-auto rounded" />
@@ -27,9 +27,9 @@ export default function PrivacyPolicy() {
       </header>
 
       <main className="bg-cream py-16">
-        <article className="max-w-[800px] mx-auto px-6 text-gray-700 leading-relaxed space-y-8">
+        <article className="max-w-200 mx-auto px-6 text-gray-700 leading-relaxed space-y-8">
           <section>
-            <h2 className="font-[family-name:var(--font-montserrat)] font-bold text-xl text-gray-800 mb-3">
+            <h2 className="font-display font-bold text-xl text-gray-800 mb-3">
               1. Uvod
             </h2>
             <p>
@@ -41,7 +41,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="font-[family-name:var(--font-montserrat)] font-bold text-xl text-gray-800 mb-3">
+            <h2 className="font-display font-bold text-xl text-gray-800 mb-3">
               2. Koje informacije prikupljamo
             </h2>
             <p>
@@ -53,7 +53,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="font-[family-name:var(--font-montserrat)] font-bold text-xl text-gray-800 mb-3">
+            <h2 className="font-display font-bold text-xl text-gray-800 mb-3">
               3. Kako koristimo informacije
             </h2>
             <p>Informacije koje prikupimo koristimo isključivo za:</p>
@@ -65,7 +65,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="font-[family-name:var(--font-montserrat)] font-bold text-xl text-gray-800 mb-3">
+            <h2 className="font-display font-bold text-xl text-gray-800 mb-3">
               4. Kolačići (cookies)
             </h2>
             <p>
@@ -78,7 +78,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="font-[family-name:var(--font-montserrat)] font-bold text-xl text-gray-800 mb-3">
+            <h2 className="font-display font-bold text-xl text-gray-800 mb-3">
               5. Treće strane
             </h2>
             <p>
@@ -90,7 +90,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="font-[family-name:var(--font-montserrat)] font-bold text-xl text-gray-800 mb-3">
+            <h2 className="font-display font-bold text-xl text-gray-800 mb-3">
               6. Vaša prava
             </h2>
             <p>Imate pravo da:</p>
@@ -102,12 +102,12 @@ export default function PrivacyPolicy() {
           </section>
 
           <section>
-            <h2 className="font-[family-name:var(--font-montserrat)] font-bold text-xl text-gray-800 mb-3">
+            <h2 className="font-display font-bold text-xl text-gray-800 mb-3">
               7. Kontakt
             </h2>
             <p>
               Za sva pitanja u vezi sa privatnošću podataka, kontaktirajte nas
-              putem <a href="/#kontakt" className="text-accent-dark hover:underline">kontakt forme</a> na
+              putem <a href="/#kontakt" className="text-accent-dark hover:underline">kontakt forme</a>{/* eslint-disable-line @next/next/no-html-link-for-pages -- cross-page hash needs a full load so the home page scrolls to #kontakt */} na
               našoj stranici ili putem naših društvenih mreža.
             </p>
           </section>

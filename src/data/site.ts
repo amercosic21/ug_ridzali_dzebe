@@ -36,3 +36,19 @@ export const siteInfo = {
 
 export const mailtoHref = `mailto:${siteInfo.email}`;
 export const telHref = `tel:${siteInfo.phone.href}`;
+
+// Glavna navigacija — dijeli je Navbar i Footer.
+export const navLinks = [
+  { href: "#pocetna", label: "Početna" },
+  { href: "#o-nama", label: "O nama" },
+  { href: "#spomen", label: "Spomen" },
+  { href: "#turnir", label: "Turnir" },
+  { href: "/galerija", label: "Galerija" },
+  { href: "#kontakt", label: "Kontakt" },
+] as const;
+
+// Footer ponavlja navigaciju i dodaje link na politiku privatnosti.
+export const footerLinks = [
+  ...navLinks,
+  { href: "/politika-privatnosti", label: "Politika privatnosti" },
+] as const;

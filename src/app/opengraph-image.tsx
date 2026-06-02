@@ -24,8 +24,12 @@ export default async function OgImage() {
           gap: "30px",
         }}
       >
+        {/* next/og ImageResponse renders with satori, which requires a raw
+            <img>; next/image is not available in this context. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={logoSrc}
+          alt=""
           width={280}
           height={280}
           style={{ borderRadius: "50%" }}
