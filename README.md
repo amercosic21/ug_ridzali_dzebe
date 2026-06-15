@@ -16,7 +16,7 @@ Landing page for the Ridžali-Džebe recreational area featuring a photo gallery
 ## Pages
 
 - `/` — Landing page (Hero, About, Memorial, QuoteCountdown, Tournament, GalleryTeaser, Contact)
-- `/galerija` — Photo gallery (112 images, lightbox, pagination)
+- `/galerija` — Photo gallery (142 images, lightbox, pagination, sorted by category)
 - `/politika-privatnosti` — Privacy policy
 
 ## Getting Started
@@ -44,7 +44,10 @@ src/
 │   ├── layout.tsx                # Root layout, metadata, fonts
 │   ├── globals.css               # Global styles and animations
 │   ├── galerija/page.tsx         # Gallery page
-│   └── politika-privatnosti/     # Privacy policy
+│   ├── politika-privatnosti/     # Privacy policy
+│   ├── robots.ts, sitemap.ts     # SEO: generated /robots.txt + /sitemap.xml
+│   ├── opengraph-image.tsx       # Generated social share image (1200x630)
+│   └── icon.png, apple-icon.png, favicon.ico   # Favicons (browser tab, Google, iOS)
 ├── components/                   # React components
 │   ├── Hero.tsx Navbar.tsx       # page sections + site chrome, composed by
 │   ├── About.tsx Memorial.tsx    #   app/page.tsx (each section's private parts
@@ -72,4 +75,4 @@ public/
 
 - Facebook: [Udruženje građana "Ridžali-Džebe"](https://www.facebook.com/profile.php?id=100083602091090)
 - Instagram: [@ug_ridzalidzebe](https://www.instagram.com/ug_ridzalidzebe)
-- Email: amercoski@gmail.com
+- Email: ugridzalidzebe@hotmail.com
