@@ -4,6 +4,8 @@
 export const siteInfo = {
   name: 'Udruženje građana "Ridžali-Džebe"',
   shortName: 'UG "Ridžali-Džebe"',
+  // Naziv koji Google prikazuje kao ime stranice u rezultatima pretrage.
+  siteName: "RidzaliDzebe.ba",
   url: "https://ridzalidzebe.ba",
   foundingYear: "2024",
 

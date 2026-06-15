@@ -36,6 +36,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'UG "Ridžali-Džebe" | Memorijalni turnir u malom nogometu',
+    siteName: siteInfo.siteName,
     description:
       "Tradicija, zajedništvo i memorijalni turnir u malom nogometu u Zavidovićima od 1996. godine.",
     type: "website",
@@ -48,10 +49,6 @@ export const metadata: Metadata = {
         alt: 'UG "Ridžali-Džebe" | Memorijalni turnir u malom nogometu',
       },
     ],
-  },
-  icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
   },
   other: {
     "theme-color": "#3d7a1a",
@@ -92,6 +89,17 @@ export default function RootLayout({
                 siteInfo.social.facebook.url,
                 siteInfo.social.instagram.url,
               ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: siteInfo.siteName,
+              url: siteInfo.url,
             }),
           }}
         />

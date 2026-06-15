@@ -43,6 +43,11 @@ const rawItems: GalleryItem[] = [
     category: "other",
   },
   {
+    src: "/galerija/724222018_967889626007765_4082353054282790983_n.jpg",
+    alt: "Pogled iz zraka na okupljanje i igru na travnatom terenu izletišta",
+    category: "sport",
+  },
+  {
     src: "/galerija/475448278_585646207565444_8322946572365835190_n.jpg",
     alt: "Prazan travnati teren i tribina pod oblacima",
     category: "sport",
@@ -50,6 +55,11 @@ const rawItems: GalleryItem[] = [
   {
     src: "/galerija/480946101_604936725636392_2480714244560415557_n.jpg",
     alt: "Pogled iz zraka na teren i tribine izletišta",
+    category: "sport",
+  },
+  {
+    src: "/galerija/721777955_967889342674460_1577595100418823846_n.jpg",
+    alt: "Plave sjedalice na tribini i okupljanje na terenu, nadstrešnica u pozadini",
     category: "sport",
   },
   {
@@ -68,19 +78,24 @@ const rawItems: GalleryItem[] = [
     category: "objects",
   },
   {
-    src: "/galerija/514280688_728970796566317_477902357218197106_n.jpg",
-    alt: "Teren pri zalasku sunca",
-    category: "sport",
-  },
-  {
     src: "/galerija/574917804_792266013570128_4196893037386314071_n.jpg",
     alt: "Izletište u jesenjim bojama",
     category: "sport",
   },
   {
+    src: "/galerija/702259985_946066348190093_9077501986972708290_n.jpg",
+    alt: "Drvena nadstrešnica sa stolom na travnatoj livadi izletišta",
+    category: "objects",
+  },
+  {
     src: "/galerija/642487193_883317164465012_2636911140592017459_n.jpg",
     alt: "Nadstrešnica među borovim drvećem",
     category: "objects",
+  },
+  {
+    src: "/galerija/724493219_967889412674453_1303412264157661788_n.jpg",
+    alt: "Pogled iz zraka na teren i natkrivenu tribinu izletišta",
+    category: "sport",
   },
   {
     src: "/galerija/481901393_603918059071592_3586934915915051548_n.jpg",
@@ -103,6 +118,11 @@ const rawItems: GalleryItem[] = [
     category: "objects",
   },
   {
+    src: "/galerija/724757694_967889132674481_611614136932180156_n.jpg",
+    alt: "Pogled sa natkrivene tribine na igru na travnatom terenu",
+    category: "sport",
+  },
+  {
     src: "/galerija/556892917_768795619250501_9164913895724192867_n.jpg",
     alt: "Noćni pogled na igralište sa rasvjetom",
     category: "sport",
@@ -111,6 +131,11 @@ const rawItems: GalleryItem[] = [
     src: "/galerija/652727417_894017826728279_5187648435415180382_n.jpg",
     alt: "Nadstrešnica sa zastavom Bosne i Hercegovine među mladim borovima",
     category: "objects",
+  },
+  {
+    src: "/galerija/708088530_952216644241730_6053975414452827745_n.jpg",
+    alt: "Prazna tribina sa plavim sjedalicama, gol i spomen-paviljon na izletištu",
+    category: "other",
   },
   {
     src: "/galerija/505231698_678730408257023_9158097999204956169_n.jpg",
@@ -128,6 +153,11 @@ const rawItems: GalleryItem[] = [
     category: "sport",
   },
   {
+    src: "/galerija/723897837_967889486007779_5656624955306812140_n.jpg",
+    alt: "Pogled iz zraka na izletište okruženo poljima i šumom",
+    category: "sport",
+  },
+  {
     src: "/galerija/475816152_585652000898198_5645996060061168204_n.jpg",
     alt: "Akcija na turniru",
     category: "sport",
@@ -135,6 +165,11 @@ const rawItems: GalleryItem[] = [
   {
     src: "/galerija/490517046_636299192500145_386185089268984428_n.jpg",
     alt: "Pogled na tribinu, spomenik i igralište",
+    category: "sport",
+  },
+  {
+    src: "/galerija/724390975_967889586007769_4693742892992801064_n.jpg",
+    alt: "Nadstrešnice sa crvenim i tamnim krovom i okupljanje na izletištu",
     category: "sport",
   },
   {
@@ -150,6 +185,11 @@ const rawItems: GalleryItem[] = [
   {
     src: "/galerija/490103519_636299142500150_7024585924845487703_n.jpg",
     alt: "Plava tribina i igralište pod vedrim proljetnim nebom",
+    category: "sport",
+  },
+  {
+    src: "/galerija/724700233_967889376007790_7138170432883083745_n.jpg",
+    alt: "Pogled iz zraka na Zavidoviće i okolne planine",
     category: "sport",
   },
   {
@@ -173,6 +213,11 @@ const rawItems: GalleryItem[] = [
     category: "sport",
   },
   {
+    src: "/galerija/724052448_967889182674476_5994443975155833937_n.jpg",
+    alt: "Panorama Zavidovića i riječne doline iz zraka",
+    category: "sport",
+  },
+  {
     src: "/galerija/526535563_717545854375478_1224865514777855543_n.jpg",
     alt: "Dječije igralište sa ljuljačkama i toboganom",
     category: "sport",
@@ -181,6 +226,11 @@ const rawItems: GalleryItem[] = [
     src: "/galerija/528414286_719502610846469_6825509220007656104_n.jpg",
     alt: "Nadstrešnica u borovoj šumi",
     category: "objects",
+  },
+  {
+    src: "/galerija/704571634_946066441523417_8021371549558941150_n.jpg",
+    alt: "Travnata padina sa mladim drvećem i spomen-paviljonom u sumrak",
+    category: "other",
   },
   {
     src: "/galerija/540791225_744804658316264_4542881718033550295_n.jpg",
@@ -605,11 +655,6 @@ const rawItems: GalleryItem[] = [
   {
     src: "/galerija/533094859_729886299808100_8784823916302244640_n.jpg",
     alt: "Pogled sa tribine na teren sa zastavom Bosne i Hercegovine",
-    category: "sport",
-  },
-  {
-    src: "/galerija/533338422_727734060023324_7330037877840460866_n.jpg",
-    alt: "Prazan teren pri zalasku sunca sa tribinom i spomenikom u daljini",
     category: "sport",
   },
   {
