@@ -21,6 +21,9 @@ const openSans = Open_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ridzalidzebe.ba"),
+  alternates: {
+    canonical: "/",
+  },
   title: 'UG "Ridžali-Džebe" | Memorijalni turnir u malom nogometu',
   description:
     "Udruženje građana Ridžali Džebe - Memorijalni turnir u malom nogometu koji se održava od 1996. godine u Zavidovićima. Izletište, sport, zajedništvo i sjećanje.",
@@ -40,6 +43,7 @@ export const metadata: Metadata = {
     description:
       "Tradicija, zajedništvo i memorijalni turnir u malom nogometu u Zavidovićima od 1996. godine.",
     type: "website",
+    url: "/",
     locale: "bs_BA",
     images: [
       {

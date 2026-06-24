@@ -1,8 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { siteInfo } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Politika privatnosti | UG Ridžali Džebe",
+  description:
+    "Ova politika privatnosti objašnjava koje informacije prikupljamo, kako ih koristimo i koja su vaša prava.",
+  alternates: {
+    canonical: "/politika-privatnosti",
+  },
+  openGraph: {
+    title: "Politika privatnosti | UG Ridžali Džebe",
+    siteName: siteInfo.siteName,
+    description:
+      "Ova politika privatnosti objašnjava koje informacije prikupljamo, kako ih koristimo i koja su vaša prava.",
+    type: "website",
+    url: "/politika-privatnosti",
+    locale: "bs_BA",
+  },
 };
 
 export default function PrivacyPolicy() {
